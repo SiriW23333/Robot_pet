@@ -1,0 +1,41 @@
+[4.654s] Invoking command in '/root/hand_reader/build/hand_reader': PYTHONPATH=/root/hand_reader/build/hand_reader/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/hand_reader/install/hand_reader/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /root/hand_reader/build/hand_reader/build
+[6.463s] running develop
+[7.536s] Removing /root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand-reader.egg-link (link to .)
+[7.805s] Invoked command in '/root/hand_reader/build/hand_reader' returned '0': PYTHONPATH=/root/hand_reader/build/hand_reader/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/hand_reader/install/hand_reader/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /root/hand_reader/build/hand_reader/build
+[7.819s] Invoking command in '/root/hand_reader/src/hand_reader': PYTHONPATH=/root/hand_reader/build/hand_reader/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/hand_reader/install/hand_reader/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hand_reader build --build-base /root/hand_reader/build/hand_reader/build install --record /root/hand_reader/build/hand_reader/install.log --single-version-externally-managed install_data --force
+[9.464s] running egg_info
+[9.468s] writing ../../build/hand_reader/hand_reader.egg-info/PKG-INFO
+[9.469s] writing dependency_links to ../../build/hand_reader/hand_reader.egg-info/dependency_links.txt
+[9.469s] writing entry points to ../../build/hand_reader/hand_reader.egg-info/entry_points.txt
+[9.470s] writing requirements to ../../build/hand_reader/hand_reader.egg-info/requires.txt
+[9.471s] writing top-level names to ../../build/hand_reader/hand_reader.egg-info/top_level.txt
+[9.484s] reading manifest file '../../build/hand_reader/hand_reader.egg-info/SOURCES.txt'
+[9.490s] writing manifest file '../../build/hand_reader/hand_reader.egg-info/SOURCES.txt'
+[9.490s] running build
+[9.491s] running build_py
+[9.491s] creating /root/hand_reader/build/hand_reader/build
+[9.492s] creating /root/hand_reader/build/hand_reader/build/lib
+[9.492s] creating /root/hand_reader/build/hand_reader/build/lib/hand_reader
+[9.493s] copying hand_reader/hand_reader_node.py -> /root/hand_reader/build/hand_reader/build/lib/hand_reader
+[9.493s] copying hand_reader/__init__.py -> /root/hand_reader/build/hand_reader/build/lib/hand_reader
+[9.494s] running install
+[9.495s] running install_lib
+[9.499s] creating /root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader
+[9.500s] copying /root/hand_reader/build/hand_reader/build/lib/hand_reader/hand_reader_node.py -> /root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader
+[9.500s] copying /root/hand_reader/build/hand_reader/build/lib/hand_reader/__init__.py -> /root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader
+[9.503s] byte-compiling /root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader/hand_reader_node.py to hand_reader_node.cpython-310.pyc
+[9.507s]   File "/root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader/hand_reader_node.py", line 51
+[9.508s]     except
+[9.509s]           ^
+[9.510s] SyntaxError: expected ':'
+[9.510s] 
+[9.511s] byte-compiling /root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader/__init__.py to __init__.cpython-310.pyc
+[9.511s] running install_data
+[9.512s] copying resource/hand_reader -> /root/hand_reader/install/hand_reader/share/ament_index/resource_index/packages
+[9.512s] copying package.xml -> /root/hand_reader/install/hand_reader/share/hand_reader
+[9.513s] running install_egg_info
+[9.522s] Copying ../../build/hand_reader/hand_reader.egg-info to /root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader-0.0.0-py3.10.egg-info
+[9.526s] running install_scripts
+[9.655s] Installing hand_reader script to /root/hand_reader/install/hand_reader/lib/hand_reader
+[9.656s] writing list of installed files to '/root/hand_reader/build/hand_reader/install.log'
+[9.884s] Invoked command in '/root/hand_reader/src/hand_reader' returned '0': PYTHONPATH=/root/hand_reader/build/hand_reader/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/hand_reader/install/hand_reader/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hand_reader build --build-base /root/hand_reader/build/hand_reader/build install --record /root/hand_reader/build/hand_reader/install.log --single-version-externally-managed install_data --force

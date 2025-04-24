@@ -1,0 +1,147 @@
+[1.625s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[1.626s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], bazel_args=None, bazel_task=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, meson_args=[], ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_alias.argument_parser.alias.AliasArgumentDecorator object at 0xffff92f10f40>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff92f10190>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff92f10190>>, mixin_verb=('build',))
+[2.746s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[2.746s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[2.747s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[2.747s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[2.747s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[2.747s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[2.748s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/root/hand_reader'
+[2.748s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[2.749s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[2.749s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[2.749s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[2.749s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[2.750s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[2.750s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[2.750s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[2.750s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[2.764s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['bazel', 'cmake', 'meson', 'python']
+[2.765s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'bazel'
+[2.765s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[2.765s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'meson'
+[2.766s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[2.766s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[2.766s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[2.767s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[2.767s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[2.768s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[2.768s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[2.769s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[2.769s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[2.769s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[2.770s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[2.770s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[2.771s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[2.771s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[2.771s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[2.772s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[2.772s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[2.772s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[2.772s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[2.772s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[2.773s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[2.773s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['bazel', 'cmake', 'meson', 'python']
+[2.773s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'bazel'
+[2.774s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[2.774s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'meson'
+[2.774s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[2.774s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[2.774s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[2.775s] Level 1:colcon.colcon_core.package_identification:_identify(src/hand_reader) by extensions ['ignore', 'ignore_ament_install']
+[2.775s] Level 1:colcon.colcon_core.package_identification:_identify(src/hand_reader) by extension 'ignore'
+[2.776s] Level 1:colcon.colcon_core.package_identification:_identify(src/hand_reader) by extension 'ignore_ament_install'
+[2.776s] Level 1:colcon.colcon_core.package_identification:_identify(src/hand_reader) by extensions ['colcon_pkg']
+[2.776s] Level 1:colcon.colcon_core.package_identification:_identify(src/hand_reader) by extension 'colcon_pkg'
+[2.776s] Level 1:colcon.colcon_core.package_identification:_identify(src/hand_reader) by extensions ['colcon_meta']
+[2.777s] Level 1:colcon.colcon_core.package_identification:_identify(src/hand_reader) by extension 'colcon_meta'
+[2.777s] Level 1:colcon.colcon_core.package_identification:_identify(src/hand_reader) by extensions ['ros']
+[2.777s] Level 1:colcon.colcon_core.package_identification:_identify(src/hand_reader) by extension 'ros'
+[2.801s] DEBUG:colcon.colcon_core.package_identification:Package 'src/hand_reader' with type 'ros.ament_python' and name 'hand_reader'
+[2.801s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[2.802s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[2.802s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[2.802s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[2.802s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[2.896s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[2.896s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[2.902s] WARNING:colcon.colcon_core.prefix_path.colcon:The path '/root/hand_ws/install' in the environment variable COLCON_PREFIX_PATH doesn't exist
+[2.903s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/root/hand_ws/install/hand_det' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[2.906s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/root/hand_ws/install/hand_det' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[2.911s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /root/hand_reader/install
+[2.916s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 15 installed packages in /userdata/dev_ws/install
+[2.919s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 55 installed packages in /opt/tros/humble
+[2.929s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 266 installed packages in /opt/ros/humble
+[2.939s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[3.276s] Level 5:colcon.colcon_core.verb:set package 'hand_reader' build argument 'bazel_args' from command line to 'None'
+[3.277s] Level 5:colcon.colcon_core.verb:set package 'hand_reader' build argument 'bazel_task' from command line to 'None'
+[3.277s] Level 5:colcon.colcon_core.verb:set package 'hand_reader' build argument 'cmake_args' from command line to 'None'
+[3.277s] Level 5:colcon.colcon_core.verb:set package 'hand_reader' build argument 'cmake_target' from command line to 'None'
+[3.277s] Level 5:colcon.colcon_core.verb:set package 'hand_reader' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.278s] Level 5:colcon.colcon_core.verb:set package 'hand_reader' build argument 'cmake_clean_cache' from command line to 'False'
+[3.278s] Level 5:colcon.colcon_core.verb:set package 'hand_reader' build argument 'cmake_clean_first' from command line to 'False'
+[3.278s] Level 5:colcon.colcon_core.verb:set package 'hand_reader' build argument 'cmake_force_configure' from command line to 'False'
+[3.278s] Level 5:colcon.colcon_core.verb:set package 'hand_reader' build argument 'meson_args' from command line to '[]'
+[3.278s] Level 5:colcon.colcon_core.verb:set package 'hand_reader' build argument 'ament_cmake_args' from command line to 'None'
+[3.278s] Level 5:colcon.colcon_core.verb:set package 'hand_reader' build argument 'catkin_cmake_args' from command line to 'None'
+[3.279s] Level 5:colcon.colcon_core.verb:set package 'hand_reader' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.279s] DEBUG:colcon.colcon_core.verb:Building package 'hand_reader' with the following arguments: {'ament_cmake_args': None, 'bazel_args': None, 'bazel_task': None, 'build_base': '/root/hand_reader/build/hand_reader', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/hand_reader/install/hand_reader', 'merge_install': False, 'meson_args': [], 'path': '/root/hand_reader/src/hand_reader', 'symlink_install': False, 'test_result_base': None}
+[3.280s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[3.284s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[3.286s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/root/hand_reader/src/hand_reader' with build type 'ament_python'
+[3.286s] Level 1:colcon.colcon_core.shell:create_environment_hook('hand_reader', 'ament_prefix_path')
+[3.300s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[3.301s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/hand_reader/install/hand_reader/share/hand_reader/hook/ament_prefix_path.ps1'
+[3.304s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/hand_reader/install/hand_reader/share/hand_reader/hook/ament_prefix_path.dsv'
+[3.306s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/hand_reader/install/hand_reader/share/hand_reader/hook/ament_prefix_path.sh'
+[3.311s] DEBUG:colcon.colcon_ros_domain_id_coordinator.shell.ros_domain_id:Allocated ROS_DOMAIN_ID=100 for '/root/hand_reader/build/hand_reader'
+[3.312s] INFO:colcon.colcon_core.shell:Skip shell extension 'ros_domain_id' for command environment: 
+[3.312s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.312s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.942s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/root/hand_reader/src/hand_reader'
+[4.944s] DEBUG:colcon.colcon_ros_domain_id_coordinator.shell.ros_domain_id:Allocated ROS_DOMAIN_ID=100 for '/root/hand_reader/build/hand_reader'
+[4.944s] INFO:colcon.colcon_core.shell:Skip shell extension 'ros_domain_id' for command environment: 
+[4.944s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.944s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[7.157s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/hand_reader/src/hand_reader': PYTHONPATH=/root/hand_reader/build/hand_reader/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/hand_reader/install/hand_reader/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hand_reader build --build-base /root/hand_reader/build/hand_reader/build install --record /root/hand_reader/build/hand_reader/install.log --single-version-externally-managed install_data
+[9.008s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/hand_reader/src/hand_reader' returned '0': PYTHONPATH=/root/hand_reader/build/hand_reader/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/hand_reader/install/hand_reader/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hand_reader build --build-base /root/hand_reader/build/hand_reader/build install --record /root/hand_reader/build/hand_reader/install.log --single-version-externally-managed install_data
+[9.033s] Level 1:colcon.colcon_core.environment:checking '/root/hand_reader/install/hand_reader' for CMake module files
+[9.036s] Level 1:colcon.colcon_core.environment:checking '/root/hand_reader/install/hand_reader' for CMake config files
+[9.039s] Level 1:colcon.colcon_core.environment:checking '/root/hand_reader/install/hand_reader/lib'
+[9.041s] Level 1:colcon.colcon_core.environment:checking '/root/hand_reader/install/hand_reader/bin'
+[9.042s] Level 1:colcon.colcon_core.environment:checking '/root/hand_reader/install/hand_reader/lib/pkgconfig/hand_reader.pc'
+[9.048s] Level 1:colcon.colcon_core.environment:checking '/root/hand_reader/install/hand_reader/lib/python3.10/site-packages'
+[9.049s] Level 1:colcon.colcon_core.shell:create_environment_hook('hand_reader', 'pythonpath')
+[9.053s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/hand_reader/install/hand_reader/share/hand_reader/hook/pythonpath.ps1'
+[9.057s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/hand_reader/install/hand_reader/share/hand_reader/hook/pythonpath.dsv'
+[9.060s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/hand_reader/install/hand_reader/share/hand_reader/hook/pythonpath.sh'
+[9.064s] Level 1:colcon.colcon_core.environment:checking '/root/hand_reader/install/hand_reader/bin'
+[9.064s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hand_reader)
+[9.067s] INFO:colcon.colcon_core.shell:Creating package script '/root/hand_reader/install/hand_reader/share/hand_reader/package.ps1'
+[9.073s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/hand_reader/install/hand_reader/share/hand_reader/package.dsv'
+[9.077s] INFO:colcon.colcon_core.shell:Creating package script '/root/hand_reader/install/hand_reader/share/hand_reader/package.sh'
+[9.082s] INFO:colcon.colcon_core.shell:Creating package script '/root/hand_reader/install/hand_reader/share/hand_reader/package.bash'
+[9.087s] INFO:colcon.colcon_core.shell:Creating package script '/root/hand_reader/install/hand_reader/share/hand_reader/package.zsh'
+[9.092s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/hand_reader/install/hand_reader/share/colcon-core/packages/hand_reader)
+[9.094s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[9.095s] DEBUG:colcon.colcon_ros_domain_id_coordinator.shell.ros_domain_id:Released ROS_DOMAIN_ID=100 for '/root/hand_reader/build/hand_reader'
+[9.096s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[9.096s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[9.096s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[9.130s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[9.130s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[9.131s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[9.131s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[34.160s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.NoReply: Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+[34.161s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[34.164s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/hand_reader/install/local_setup.ps1'
+[34.173s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/hand_reader/install/_local_setup_util_ps1.py'
+[34.183s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/hand_reader/install/setup.ps1'
+[34.194s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/hand_reader/install/local_setup.sh'
+[34.198s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/hand_reader/install/_local_setup_util_sh.py'
+[34.202s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/hand_reader/install/setup.sh'
+[34.213s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/hand_reader/install/local_setup.bash'
+[34.216s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/hand_reader/install/setup.bash'
+[34.228s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/hand_reader/install/local_setup.zsh'
+[34.231s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/hand_reader/install/setup.zsh'
+[34.240s] INFO:colcon.colcon_core.shell:Creating '/root/hand_reader/install/spawn_shell.bash'

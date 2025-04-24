@@ -1,0 +1,20 @@
+[4.254s] Invoking command in '/root/face_ws/face_recog/src/face_recog': PYTHONPATH=/root/face_ws/face_recog/build/face_recog/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/face_ws/face_recog/install/face_recog/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/face_recog build --build-base /root/face_ws/face_recog/build/face_recog/build install --record /root/face_ws/face_recog/build/face_recog/install.log --single-version-externally-managed install_data
+[5.873s] running egg_info
+[5.879s] writing ../../build/face_recog/face_recog.egg-info/PKG-INFO
+[5.880s] writing dependency_links to ../../build/face_recog/face_recog.egg-info/dependency_links.txt
+[5.881s] writing entry points to ../../build/face_recog/face_recog.egg-info/entry_points.txt
+[5.882s] writing requirements to ../../build/face_recog/face_recog.egg-info/requires.txt
+[5.882s] writing top-level names to ../../build/face_recog/face_recog.egg-info/top_level.txt
+[5.887s] reading manifest file '../../build/face_recog/face_recog.egg-info/SOURCES.txt'
+[5.892s] writing manifest file '../../build/face_recog/face_recog.egg-info/SOURCES.txt'
+[5.892s] running build
+[5.893s] running install
+[5.894s] running install_data
+[5.895s] running install_egg_info
+[5.909s] Copying ../../build/face_recog/face_recog.egg-info to /root/face_ws/face_recog/install/face_recog/lib/python3.10/site-packages/face_recog-0.0.0-py3.10.egg-info
+[5.913s] running install_scripts
+[6.038s] Installing face_dataset script to /root/face_ws/face_recog/install/face_recog/bin
+[6.038s] Installing face_recognition_node script to /root/face_ws/face_recog/install/face_recog/bin
+[6.039s] Installing face_training script to /root/face_ws/face_recog/install/face_recog/bin
+[6.039s] writing list of installed files to '/root/face_ws/face_recog/build/face_recog/install.log'
+[6.246s] Invoked command in '/root/face_ws/face_recog/src/face_recog' returned '0': PYTHONPATH=/root/face_ws/face_recog/build/face_recog/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/face_ws/face_recog/install/face_recog/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/face_recog build --build-base /root/face_ws/face_recog/build/face_recog/build install --record /root/face_ws/face_recog/build/face_recog/install.log --single-version-externally-managed install_data

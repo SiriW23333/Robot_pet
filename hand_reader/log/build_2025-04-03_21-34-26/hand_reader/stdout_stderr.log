@@ -1,0 +1,37 @@
+running develop
+Removing /root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand-reader.egg-link (link to .)
+running egg_info
+writing ../../build/hand_reader/hand_reader.egg-info/PKG-INFO
+writing dependency_links to ../../build/hand_reader/hand_reader.egg-info/dependency_links.txt
+writing entry points to ../../build/hand_reader/hand_reader.egg-info/entry_points.txt
+writing requirements to ../../build/hand_reader/hand_reader.egg-info/requires.txt
+writing top-level names to ../../build/hand_reader/hand_reader.egg-info/top_level.txt
+reading manifest file '../../build/hand_reader/hand_reader.egg-info/SOURCES.txt'
+writing manifest file '../../build/hand_reader/hand_reader.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /root/hand_reader/build/hand_reader/build
+creating /root/hand_reader/build/hand_reader/build/lib
+creating /root/hand_reader/build/hand_reader/build/lib/hand_reader
+copying hand_reader/hand_reader_node.py -> /root/hand_reader/build/hand_reader/build/lib/hand_reader
+copying hand_reader/__init__.py -> /root/hand_reader/build/hand_reader/build/lib/hand_reader
+running install
+running install_lib
+creating /root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader
+copying /root/hand_reader/build/hand_reader/build/lib/hand_reader/hand_reader_node.py -> /root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader
+copying /root/hand_reader/build/hand_reader/build/lib/hand_reader/__init__.py -> /root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader
+byte-compiling /root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader/hand_reader_node.py to hand_reader_node.cpython-310.pyc
+  File "/root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader/hand_reader_node.py", line 51
+    except
+          ^
+SyntaxError: expected ':'
+
+byte-compiling /root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader/__init__.py to __init__.cpython-310.pyc
+running install_data
+copying resource/hand_reader -> /root/hand_reader/install/hand_reader/share/ament_index/resource_index/packages
+copying package.xml -> /root/hand_reader/install/hand_reader/share/hand_reader
+running install_egg_info
+Copying ../../build/hand_reader/hand_reader.egg-info to /root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader-0.0.0-py3.10.egg-info
+running install_scripts
+Installing hand_reader script to /root/hand_reader/install/hand_reader/lib/hand_reader
+writing list of installed files to '/root/hand_reader/build/hand_reader/install.log'

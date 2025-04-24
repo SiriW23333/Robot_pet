@@ -1,0 +1,17 @@
+[4.232s] Invoking command in '/root/face_ws/face_recog/src/face_recog': PYTHONPATH=/root/face_ws/face_recog/build/face_rec/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/face_ws/face_recog/install/face_rec/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/face_rec build --build-base /root/face_ws/face_recog/build/face_rec/build install --record /root/face_ws/face_recog/build/face_rec/install.log --single-version-externally-managed install_data
+[5.795s] running egg_info
+[5.799s] creating ../../build/face_rec/face_rec.egg-info
+[5.800s] writing ../../build/face_rec/face_rec.egg-info/PKG-INFO
+[5.801s] writing dependency_links to ../../build/face_rec/face_rec.egg-info/dependency_links.txt
+[5.802s] writing entry points to ../../build/face_rec/face_rec.egg-info/entry_points.txt
+[5.802s] writing requirements to ../../build/face_rec/face_rec.egg-info/requires.txt
+[5.803s] writing top-level names to ../../build/face_rec/face_rec.egg-info/top_level.txt
+[5.804s] writing manifest file '../../build/face_rec/face_rec.egg-info/SOURCES.txt'
+[5.807s] reading manifest file '../../build/face_rec/face_rec.egg-info/SOURCES.txt'
+[5.811s] writing manifest file '../../build/face_rec/face_rec.egg-info/SOURCES.txt'
+[5.812s] running build
+[5.812s] running install
+[5.814s] running install_data
+[5.814s] creating /root/face_ws/face_recog/install/face_rec/share/face_recog
+[5.815s] error: can't copy 'face_recog/': doesn't exist or not a regular file
+[5.987s] Invoked command in '/root/face_ws/face_recog/src/face_recog' returned '1': PYTHONPATH=/root/face_ws/face_recog/build/face_rec/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/face_ws/face_recog/install/face_rec/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/face_rec build --build-base /root/face_ws/face_recog/build/face_rec/build install --record /root/face_ws/face_recog/build/face_rec/install.log --single-version-externally-managed install_data

@@ -1,0 +1,9 @@
+setup.py
+../../build/face_recog/face_recog.egg-info/PKG-INFO
+../../build/face_recog/face_recog.egg-info/SOURCES.txt
+../../build/face_recog/face_recog.egg-info/dependency_links.txt
+../../build/face_recog/face_recog.egg-info/entry_points.txt
+../../build/face_recog/face_recog.egg-info/requires.txt
+../../build/face_recog/face_recog.egg-info/top_level.txt
+face_recog/deploy.prototxt
+face_recog/res10_300x300_ssd_iter_140000_fp16.caffemodel

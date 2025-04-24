@@ -1,0 +1,14 @@
+running egg_info
+creating ../../build/face_rec/face_rec.egg-info
+writing ../../build/face_rec/face_rec.egg-info/PKG-INFO
+writing dependency_links to ../../build/face_rec/face_rec.egg-info/dependency_links.txt
+writing entry points to ../../build/face_rec/face_rec.egg-info/entry_points.txt
+writing requirements to ../../build/face_rec/face_rec.egg-info/requires.txt
+writing top-level names to ../../build/face_rec/face_rec.egg-info/top_level.txt
+writing manifest file '../../build/face_rec/face_rec.egg-info/SOURCES.txt'
+reading manifest file '../../build/face_rec/face_rec.egg-info/SOURCES.txt'
+writing manifest file '../../build/face_rec/face_rec.egg-info/SOURCES.txt'
+running build
+running install
+running install_data
+creating /root/face_ws/face_recog/install/face_rec/share/face_recog

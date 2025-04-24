@@ -1,0 +1,3 @@
+[console_scripts]
+hand_reader = hand_reader.hand_reader_node:main
+

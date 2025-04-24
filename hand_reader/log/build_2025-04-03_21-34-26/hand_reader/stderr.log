@@ -1,0 +1,5 @@
+  File "/root/hand_reader/install/hand_reader/lib/python3.10/site-packages/hand_reader/hand_reader_node.py", line 51
+    except
+          ^
+SyntaxError: expected ':'
+

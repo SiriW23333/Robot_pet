@@ -1,0 +1,121 @@
+[1.585s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install', '--packages-select', 'face_rec']
+[1.586s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['face_rec'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], bazel_args=None, bazel_task=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, meson_args=[], ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_alias.argument_parser.alias.AliasArgumentDecorator object at 0xffff7fe6c970>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff7fe3fa90>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff7fe3fa90>>, mixin_verb=('build',))
+[1.889s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.890s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.890s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.890s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.891s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.891s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.891s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/sunrise/doraemon'
+[1.892s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.892s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.892s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.893s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.893s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.893s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.893s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.915s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['bazel', 'cmake', 'meson', 'python']
+[1.915s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'bazel'
+[1.915s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.916s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'meson'
+[1.916s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.916s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.916s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.917s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.917s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.918s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.918s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.919s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.919s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.919s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.920s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.920s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.920s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[1.921s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[1.921s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[1.921s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[1.922s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[1.922s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[1.922s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[1.922s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[1.922s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[1.923s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['bazel', 'cmake', 'meson', 'python']
+[1.923s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'bazel'
+[1.923s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[1.924s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'meson'
+[1.924s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[1.924s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[1.924s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[1.925s] Level 1:colcon.colcon_core.package_identification:_identify(src/face_rec) by extensions ['ignore', 'ignore_ament_install']
+[1.925s] Level 1:colcon.colcon_core.package_identification:_identify(src/face_rec) by extension 'ignore'
+[1.926s] Level 1:colcon.colcon_core.package_identification:_identify(src/face_rec) by extension 'ignore_ament_install'
+[1.926s] Level 1:colcon.colcon_core.package_identification:_identify(src/face_rec) by extensions ['colcon_pkg']
+[1.926s] Level 1:colcon.colcon_core.package_identification:_identify(src/face_rec) by extension 'colcon_pkg'
+[1.926s] Level 1:colcon.colcon_core.package_identification:_identify(src/face_rec) by extensions ['colcon_meta']
+[1.926s] Level 1:colcon.colcon_core.package_identification:_identify(src/face_rec) by extension 'colcon_meta'
+[1.927s] Level 1:colcon.colcon_core.package_identification:_identify(src/face_rec) by extensions ['ros']
+[1.927s] Level 1:colcon.colcon_core.package_identification:_identify(src/face_rec) by extension 'ros'
+[1.941s] DEBUG:colcon.colcon_core.package_identification:Package 'src/face_rec' with type 'ros.ament_python' and name 'face_rec'
+[1.941s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.942s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.942s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.942s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.942s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[2.033s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[2.033s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[2.038s] WARNING:colcon.colcon_core.prefix_path.colcon:The path '/home/sunrise/doraemon/src/face_rec/install' in the environment variable COLCON_PREFIX_PATH doesn't exist
+[2.038s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/sunrise/doraemon/install/face_rec' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[2.045s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/sunrise/doraemon/install
+[2.050s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 14 installed packages in /userdata/dev_ws/install
+[2.053s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 35 installed packages in /opt/tros/humble
+[2.062s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 265 installed packages in /opt/ros/humble
+[2.073s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[2.398s] Level 5:colcon.colcon_core.verb:set package 'face_rec' build argument 'bazel_args' from command line to 'None'
+[2.398s] Level 5:colcon.colcon_core.verb:set package 'face_rec' build argument 'bazel_task' from command line to 'None'
+[2.399s] Level 5:colcon.colcon_core.verb:set package 'face_rec' build argument 'cmake_args' from command line to 'None'
+[2.399s] Level 5:colcon.colcon_core.verb:set package 'face_rec' build argument 'cmake_target' from command line to 'None'
+[2.399s] Level 5:colcon.colcon_core.verb:set package 'face_rec' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.399s] Level 5:colcon.colcon_core.verb:set package 'face_rec' build argument 'cmake_clean_cache' from command line to 'False'
+[2.399s] Level 5:colcon.colcon_core.verb:set package 'face_rec' build argument 'cmake_clean_first' from command line to 'False'
+[2.400s] Level 5:colcon.colcon_core.verb:set package 'face_rec' build argument 'cmake_force_configure' from command line to 'False'
+[2.400s] Level 5:colcon.colcon_core.verb:set package 'face_rec' build argument 'meson_args' from command line to '[]'
+[2.400s] Level 5:colcon.colcon_core.verb:set package 'face_rec' build argument 'ament_cmake_args' from command line to 'None'
+[2.400s] Level 5:colcon.colcon_core.verb:set package 'face_rec' build argument 'catkin_cmake_args' from command line to 'None'
+[2.400s] Level 5:colcon.colcon_core.verb:set package 'face_rec' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.400s] DEBUG:colcon.colcon_core.verb:Building package 'face_rec' with the following arguments: {'ament_cmake_args': None, 'bazel_args': None, 'bazel_task': None, 'build_base': '/home/sunrise/doraemon/build/face_rec', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sunrise/doraemon/install/face_rec', 'merge_install': False, 'meson_args': [], 'path': '/home/sunrise/doraemon/src/face_rec', 'symlink_install': True, 'test_result_base': None}
+[2.401s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[2.406s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[2.407s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/sunrise/doraemon/src/face_rec' with build type 'ament_python'
+[2.408s] Level 1:colcon.colcon_core.shell:create_environment_hook('face_rec', 'ament_prefix_path')
+[2.423s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.424s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sunrise/doraemon/install/face_rec/share/face_rec/hook/ament_prefix_path.ps1'
+[2.428s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sunrise/doraemon/install/face_rec/share/face_rec/hook/ament_prefix_path.dsv'
+[2.430s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sunrise/doraemon/install/face_rec/share/face_rec/hook/ament_prefix_path.sh'
+[2.434s] DEBUG:colcon.colcon_ros_domain_id_coordinator.shell.ros_domain_id:Allocated ROS_DOMAIN_ID=45 for '/home/sunrise/doraemon/build/face_rec'
+[2.434s] INFO:colcon.colcon_core.shell:Skip shell extension 'ros_domain_id' for command environment: 
+[2.435s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.435s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.912s] DEBUG:colcon.colcon_ros_domain_id_coordinator.shell.ros_domain_id:Released ROS_DOMAIN_ID=45 for '/home/sunrise/doraemon/build/face_rec'
+[3.917s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.918s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.919s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with 'Command '['/usr/bin/python3', '-c', 'import sys;from contextlib import suppress;exec("with suppress(ImportError):    from setuptools.extern.packaging.specifiers    import SpecifierSet");exec("with suppress(ImportError):    from packaging.specifiers import SpecifierSet");from distutils.core import run_setup;dist = run_setup(    \'setup.py\', script_args=(\'--dry-run\',), stop_after=\'config\');skip_keys = (\'cmdclass\', \'distclass\', \'ext_modules\', \'metadata\');data = {    key: value for key, value in dist.__dict__.items()     if (        not key.startswith(\'_\') and         not callable(value) and         key not in skip_keys and         key not in dist.display_option_names    )};data[\'metadata\'] = {    k: v for k, v in dist.metadata.__dict__.items()     if k not in (\'license_files\', \'provides_extras\')};sys.stdout.buffer.write(repr(data).encode(\'utf-8\'))']' returned non-zero exit status 1.'
+[3.919s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.958s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[3.959s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.959s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.960s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[28.987s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.NoReply: Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+[28.988s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[28.990s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sunrise/doraemon/install/local_setup.ps1'
+[28.996s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/sunrise/doraemon/install/_local_setup_util_ps1.py'
+[29.006s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sunrise/doraemon/install/setup.ps1'
+[29.020s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sunrise/doraemon/install/local_setup.sh'
+[29.024s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/sunrise/doraemon/install/_local_setup_util_sh.py'
+[29.026s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sunrise/doraemon/install/setup.sh'
+[29.037s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sunrise/doraemon/install/local_setup.bash'
+[29.039s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sunrise/doraemon/install/setup.bash'
+[29.049s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sunrise/doraemon/install/local_setup.zsh'
+[29.052s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sunrise/doraemon/install/setup.zsh'
+[29.061s] INFO:colcon.colcon_core.shell:Creating '/home/sunrise/doraemon/install/spawn_shell.bash'

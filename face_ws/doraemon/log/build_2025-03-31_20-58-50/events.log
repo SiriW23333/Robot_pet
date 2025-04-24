@@ -1,0 +1,90 @@
+[0.000000] (-) TimerEvent: {}
+[0.001963] (face_rec) JobQueued: {'identifier': 'face_rec', 'dependencies': OrderedDict()}
+[0.002738] (face_rec) JobStarted: {'identifier': 'face_rec'}
+[0.098704] (-) TimerEvent: {}
+[0.199444] (-) TimerEvent: {}
+[0.300171] (-) TimerEvent: {}
+[0.400904] (-) TimerEvent: {}
+[0.501637] (-) TimerEvent: {}
+[0.602365] (-) TimerEvent: {}
+[0.703066] (-) TimerEvent: {}
+[0.803773] (-) TimerEvent: {}
+[0.904481] (-) TimerEvent: {}
+[1.005187] (-) TimerEvent: {}
+[1.105903] (-) TimerEvent: {}
+[1.206616] (-) TimerEvent: {}
+[1.307354] (-) TimerEvent: {}
+[1.408165] (-) TimerEvent: {}
+[1.508984] (-) TimerEvent: {}
+[1.609909] (-) TimerEvent: {}
+[1.710961] (-) TimerEvent: {}
+[1.811821] (-) TimerEvent: {}
+[1.912588] (-) TimerEvent: {}
+[2.013309] (-) TimerEvent: {}
+[2.114022] (-) TimerEvent: {}
+[2.214801] (-) TimerEvent: {}
+[2.315658] (-) TimerEvent: {}
+[2.416383] (-) TimerEvent: {}
+[2.517120] (-) TimerEvent: {}
+[2.617862] (-) TimerEvent: {}
+[2.718624] (-) TimerEvent: {}
+[2.819344] (-) TimerEvent: {}
+[2.920073] (-) TimerEvent: {}
+[3.020798] (-) TimerEvent: {}
+[3.121533] (-) TimerEvent: {}
+[3.222272] (-) TimerEvent: {}
+[3.323013] (-) TimerEvent: {}
+[3.423790] (-) TimerEvent: {}
+[3.524645] (-) TimerEvent: {}
+[3.625443] (-) TimerEvent: {}
+[3.726353] (-) TimerEvent: {}
+[3.827257] (-) TimerEvent: {}
+[3.905085] (face_rec) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/face_rec', 'build', '--build-base', '/home/sunrise/doraemon/build/face_rec/build', 'install', '--record', '/home/sunrise/doraemon/build/face_rec/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/sunrise/doraemon/src/face_rec', 'env': {'LANGUAGE': 'en_US.UTF-8', 'USER': 'root', 'SSH_CLIENT': '192.168.94.97 1679 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/userdata/dev_ws/install/serial/lib:/userdata/dev_ws/install/originbot_msgs/lib:/opt/tros/humble/lib/aarch64-linux-gnu:/opt/tros/humble/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/hobot/lib:/app/lib:/app/pub/lib:/middleware/lib:/middleware/pub/lib:/usr/hobot/lib/sensor:/system/lib:/system/usr/lib:/lib:', 'MOTD_SHOWN': 'pam', 'HOME': '/root', 'OLDPWD': '/home/sunrise/doraemon/install/face_rec/lib', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/0/bus', 'DEBUGINFOD_URLS': '', 'TROS_DISTRO': 'humble', 'COLCON_PREFIX_PATH': '/home/sunrise/doraemon/install:/userdata/dev_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'root', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm', 'XDG_SESSION_ID': '2', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/root/.pyenv/bin:/opt/ros/humble/bin:/usr/hobot/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'CAM_TYPE': 'usb', 'XDG_RUNTIME_DIR': '/run/user/0', 'DISPLAY': 'localhost:10.0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/sunrise/doraemon/install/face_rec:/userdata/dev_ws/install/vp100_ros2:/userdata/dev_ws/install/originbot_base:/userdata/dev_ws/install/serial:/userdata/dev_ws/install/originbot_teleop:/userdata/dev_ws/install/originbot_send_goal:/userdata/dev_ws/install/originbot_qrcode_detect:/userdata/dev_ws/install/originbot_navigation:/userdata/dev_ws/install/originbot_linefollower:/userdata/dev_ws/install/originbot_demo:/userdata/dev_ws/install/originbot_msgs:/userdata/dev_ws/install/originbot_bringup:/userdata/dev_ws/install/gesture_control:/userdata/dev_ws/install/body_tracking:/opt/tros/humble:/opt/ros/humble', 'ROS_DOMAIN_ID': '24', 'SHELL': '/bin/bash', 'PWD': '/home/sunrise/doraemon/build/face_rec', 'SSH_CONNECTION': '192.168.94.97 1679 192.168.94.48 22', 'PYTHONPATH': '/home/sunrise/doraemon/build/face_rec/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sunrise/doraemon/install/face_rec/lib/python3.10/site-packages:/home/sunrise/doraemon/install/face_rec/lib/python3.10/site-packages:/userdata/dev_ws/install/originbot_linefollower/lib/python3.10/site-packages:/userdata/dev_ws/install/originbot_demo/lib/python3.10/site-packages:/userdata/dev_ws/install/originbot_msgs/local/lib/python3.10/dist-packages:/opt/tros/humble/lib/python3.10/site-packages:/opt/tros/humble/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/userdata/dev_ws/install/vp100_ros2:/userdata/dev_ws/install/originbot_base:/userdata/dev_ws/install/serial:/userdata/dev_ws/install/originbot_teleop:/userdata/dev_ws/install/originbot_send_goal:/userdata/dev_ws/install/originbot_qrcode_detect:/userdata/dev_ws/install/originbot_navigation:/userdata/dev_ws/install/originbot_msgs:/userdata/dev_ws/install/originbot_bringup:/userdata/dev_ws/install/gesture_control:/userdata/dev_ws/install/body_tracking'}, 'shell': False}
+[3.933128] (-) TimerEvent: {}
+[4.037706] (-) TimerEvent: {}
+[4.138518] (-) TimerEvent: {}
+[4.239270] (-) TimerEvent: {}
+[4.340009] (-) TimerEvent: {}
+[4.440743] (-) TimerEvent: {}
+[4.541502] (-) TimerEvent: {}
+[4.642217] (-) TimerEvent: {}
+[4.742936] (-) TimerEvent: {}
+[4.843659] (-) TimerEvent: {}
+[4.944366] (-) TimerEvent: {}
+[5.045074] (-) TimerEvent: {}
+[5.145787] (-) TimerEvent: {}
+[5.246516] (-) TimerEvent: {}
+[5.347286] (-) TimerEvent: {}
+[5.417114] (face_rec) StdoutLine: {'line': b'running egg_info\n'}
+[5.420815] (face_rec) StdoutLine: {'line': b'writing ../../build/face_rec/face_rec.egg-info/PKG-INFO\n'}
+[5.421935] (face_rec) StdoutLine: {'line': b'writing dependency_links to ../../build/face_rec/face_rec.egg-info/dependency_links.txt\n'}
+[5.422879] (face_rec) StdoutLine: {'line': b'writing entry points to ../../build/face_rec/face_rec.egg-info/entry_points.txt\n'}
+[5.423591] (face_rec) StdoutLine: {'line': b'writing requirements to ../../build/face_rec/face_rec.egg-info/requires.txt\n'}
+[5.424192] (face_rec) StdoutLine: {'line': b'writing top-level names to ../../build/face_rec/face_rec.egg-info/top_level.txt\n'}
+[5.437484] (face_rec) StdoutLine: {'line': b"reading manifest file '../../build/face_rec/face_rec.egg-info/SOURCES.txt'\n"}
+[5.447401] (-) TimerEvent: {}
+[5.448225] (face_rec) StdoutLine: {'line': b"writing manifest file '../../build/face_rec/face_rec.egg-info/SOURCES.txt'\n"}
+[5.448902] (face_rec) StdoutLine: {'line': b'running build\n'}
+[5.449544] (face_rec) StdoutLine: {'line': b'running build_py\n'}
+[5.450066] (face_rec) StdoutLine: {'line': b'copying face_rec/face_training_node.py -> /home/sunrise/doraemon/build/face_rec/build/lib/face_rec\n'}
+[5.451195] (face_rec) StdoutLine: {'line': b'running install\n'}
+[5.452951] (face_rec) StdoutLine: {'line': b'running install_lib\n'}
+[5.456664] (face_rec) StdoutLine: {'line': b'copying /home/sunrise/doraemon/build/face_rec/build/lib/face_rec/face_training_node.py -> /home/sunrise/doraemon/install/face_rec/lib/python3.10/site-packages/face_rec\n'}
+[5.460117] (face_rec) StdoutLine: {'line': b'byte-compiling /home/sunrise/doraemon/install/face_rec/lib/python3.10/site-packages/face_rec/face_training_node.py to face_training_node.cpython-310.pyc\n'}
+[5.461427] (face_rec) StderrLine: {'line': b'Sorry: IndentationError: unexpected indent (face_training_node.py, line 32)\n'}
+[5.462061] (face_rec) StdoutLine: {'line': b'running install_data\n'}
+[5.471744] (face_rec) StdoutLine: {'line': b'running install_egg_info\n'}
+[5.481175] (face_rec) StdoutLine: {'line': b"removing '/home/sunrise/doraemon/install/face_rec/lib/python3.10/site-packages/face_rec-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[5.482695] (face_rec) StdoutLine: {'line': b'Copying ../../build/face_rec/face_rec.egg-info to /home/sunrise/doraemon/install/face_rec/lib/python3.10/site-packages/face_rec-0.0.0-py3.10.egg-info\n'}
+[5.486438] (face_rec) StdoutLine: {'line': b'running install_scripts\n'}
+[5.547547] (-) TimerEvent: {}
+[5.601199] (face_rec) StdoutLine: {'line': b'Installing face_dataset_node script to /home/sunrise/doraemon/install/face_rec/lib/FaceRec\n'}
+[5.602090] (face_rec) StdoutLine: {'line': b'Installing face_recognition_node script to /home/sunrise/doraemon/install/face_rec/lib/FaceRec\n'}
+[5.602740] (face_rec) StdoutLine: {'line': b'Installing face_training_node script to /home/sunrise/doraemon/install/face_rec/lib/FaceRec\n'}
+[5.604372] (face_rec) StdoutLine: {'line': b"writing list of installed files to '/home/sunrise/doraemon/build/face_rec/install.log'\n"}
+[5.647750] (-) TimerEvent: {}
+[5.748713] (-) TimerEvent: {}
+[5.810367] (face_rec) CommandEnded: {'returncode': 0}
+[5.848889] (-) TimerEvent: {}
+[5.905472] (face_rec) JobEnded: {'identifier': 'face_rec', 'rc': 0}
+[5.908650] (-) EventReactorShutdown: {}
