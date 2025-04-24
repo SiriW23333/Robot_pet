@@ -13,6 +13,7 @@ from urllib.parse import quote  # 用于URL编码的库
 import logging  # 日志记录库
 import pyaudio  # 音频处理库
 import os  # 操作系统相关库
+from hand_reader.srv import ASRcmd
 
 class Client():
     def __init__(self):
@@ -162,7 +163,7 @@ class ASRService(Node):
     def __init__(self, client):
         super().__init__('asr_service')  # 初始化ROS 2节点
         self.client_ = client 
-        self.srv = self.create_service(SetBool, '/talk_input', self.handle_request)  # 创建服务
+        self.srv = self.create_service(ASRcmd, '/talk_input', self.handle_request)  # 创建服务
         self.asr_start = False  # 初始化asr_start状态
 
     def handle_request(self, request, response):
@@ -177,7 +178,7 @@ class ASRService(Node):
                 self.client.start_recording()  # 调用客户端的开始录音方法
                 response.success = True  # 设置响应成功
                 response.message = "Recording started."  # 设置响应消息
-        else  # 如果请求数据为False，停止录音
+        else:
             if not self.asr_start:  # 如果未在录音中，忽略停止录音请求
                 self.get_logger().info('No recording in progress. Ignoring stop request.')  # 打印日志信息
                 response.success = False  # 设置响应失败

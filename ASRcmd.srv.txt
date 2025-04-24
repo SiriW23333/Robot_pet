@@ -1,0 +1,6 @@
+#请求文件
+int8 command
+
+#响应文件
+bool success
+string messsage
