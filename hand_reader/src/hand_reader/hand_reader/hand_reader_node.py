@@ -1,8 +1,8 @@
 import rclpy
 from rclpy.node import Node
 from ai_msgs.msg import PerceptionTargets
-from hand_reader.srv import ASRcmd
-
+from hand_reader.srv import ASRCmd
+from USART import RDK2stm, stm2RDK
 class PerceptionMonitor(Node):
 
     def __init__(self):
@@ -33,9 +33,17 @@ class PerceptionMonitor(Node):
                 if attribute.type == "gesture":
                     self.gesture_value = attribute.value
                     self.get_logger().info(
-                        f"检测到手势: 类型={gesture_value}",
+                        f"检测到手势: 类型={self.gesture_value}",
                     )
-                    # 可在此处添加手势映射逻辑（如1=挥手，2=握拳）
+    
+    def USART_send(self):
+        self.sent_msg=False
+        if self.gesture_value == 4 and self.sent_msg==False:
+            RDK2stm(self.gesture_value)
+            self.sent_msg=True 
+        elif self.gesture_value == 14 and self.sent_msg==False:
+            RDK2stm(self.gesture_value)
+            self.sent_msg=True        
 
 class ASRClient(Node):
     def __init__(self, monitor_node):
@@ -63,6 +71,7 @@ class ASRClient(Node):
             self.get_logger().info(f'响应: {response.success}, 消息: {response.message}')
         except Exception as e:
             self.get_logger().error(f'服务调用失败: {e}')
+
 
 
 def main(args=None):
