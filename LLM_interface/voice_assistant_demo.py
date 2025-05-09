@@ -4,10 +4,8 @@ import json
 import queue
 import threading
 import time
-
+import Hobot.GPIO as GPIO
 import websockets
-
-import gradio as gr
 import pyaudio
 
 # 音频参数
@@ -15,6 +13,10 @@ FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 16000
 CHUNK = 1024
+
+# GPIO引脚设置
+GPIO.setmode(GPIO.BOARD) #BOARD物理引脚编码模式
+GPIO.setup(11, GPIO.IN) #设置引脚11为输入模式
 
 
 class VoiceAssistant:
@@ -38,7 +40,7 @@ class VoiceAssistant:
         # WebSocket连接
         self.ws = None
         self.event_loop = asyncio.new_event_loop()
-
+        
         # 启动事件循环线程
         threading.Thread(
             target=self._start_event_loop,
@@ -50,6 +52,28 @@ class VoiceAssistant:
             self._start_voice_assistant(),
             self.event_loop
         )
+
+        # 打印所有可用设备（调试用）
+        device_count = self.p.get_device_count()  # 获取设备数量
+        for i in range(device_count):
+            info = self.p.get_device_info_by_index(i)  # 获取设备信息
+            print(f" 设备{i}: {info['name']} (: {info['maxInputChannels']})")  # 打印设备信息
+
+        # 输入源
+        self.input_device_index = None  # 初始化输入设备索引
+
+        # 寻找ES7210作为输入源
+        for i in range(device_count):
+            info = self.p.get_device_info_by_index(i)  # 获取设备信息
+
+            # 寻找duplex-audio-i2s1的device0
+            if "duplex-audio-i2s1" in info['name'] and info['maxInputChannels'] > 0:
+                self.input_device_index = i  # 设置输入设备索引
+                break
+
+        if self.input_device_index is None:  # 如果未找到设备
+            print("未找到ES7210")  # 打印错误信息
+            exit(1)  # 退出程序
 
     async def _start_voice_assistant(self):
         """初始化WebSocket连接并发送会话配置"""
@@ -116,6 +140,7 @@ class VoiceAssistant:
                 rate=RATE,
                 input=True,
                 frames_per_buffer=CHUNK,
+                input_device_index=self.input_device_index,
                 stream_callback=self.audio_callback
             )
             # 提交asr任务
@@ -123,7 +148,7 @@ class VoiceAssistant:
                 self.send_audio(),
                 self.event_loop
             )
-            return "状态：录音中... 🎤"
+            print("状态：录音中... 🎤")
 
     def stop_recording(self):
         """停止录音并发送"""
@@ -132,7 +157,7 @@ class VoiceAssistant:
             self.input_stream.stop_stream()
             self.input_stream.close()
             self.audio_buffer.put(None)
-            return "状态：音频返回中... 📤"
+            print("状态：音频返回中... 📤")
 
     async def send_audio(self):
         """发送音频并实时播放响应"""
@@ -169,63 +194,23 @@ class VoiceAssistant:
         except Exception as e:
             print(f"通信异常: {str(e)}")
 
-    async def _handle_messages(self):
-        """独立处理服务器响应的协程"""
-        try:
-            async for message in self.ws:
-                event = json.loads(message)
-                if event.get("type") == "response.audio.delta":
-                    self.output_stream.write(base64.b64decode(event["delta"]))
-        except Exception as e:
-            print(f"响应处理错误: {str(e)}")
-
     def shutdown(self):
         """清理资源"""
         self.p.terminate()
         self.event_loop.stop()
 
-    def toggle_recording(self):
-        """切换录音状态的回调函数"""
-        if assistant.is_recording:
-            status_text = self.stop_recording()
-            new_button_text = "开始录音 🎤"
-        else:
-            status_text = self.start_recording()
-            new_button_text = "停止录音 ⏹"
 
-        return new_button_text, status_text
-
-    def get_chat_history(self):
-        """获取对话记录"""
-        return "\n".join(self.chat_history)
-
-
-# 创建界面
-with gr.Blocks(title="语音助手") as demo:
-    assistant = VoiceAssistant()
-
-    with gr.Row():
-        status = gr.Textbox(label="状态", value="准备就绪 ✅", interactive=False)
-
-    with gr.Row():
-        record_btn = gr.Button("开始录音 🎤")
-
-    with gr.Row():
-        chat_history = gr.Textbox(
-            label="对话记录",
-            lines=15,
-            max_lines=20,
-            interactive=False,
-            autoscroll=True,  # 自动滚动到底部
-            value=lambda: assistant.get_chat_history(),
-            every=0.2  # 每0.2秒（200毫秒）刷新一次
-        )
-
-    # 事件绑定
-    record_btn.click(
-        fn=assistant.toggle_recording,
-        outputs=[record_btn, status]
-    )
 
 if __name__ == "__main__":
-    demo.launch()
+    assistant = VoiceAssistant()
+
+    try:
+        while True:
+            if GPIO.input[11] == 1 and not assistant.is_recording:
+                assistant.start_recording()
+            elif GPIO.input[11] == 0 and assistant.is_recording:
+                assistant.stop_recording()
+    except KeyboardInterrupt:
+        print("程序终止")
+        assistant.shutdown()
+
