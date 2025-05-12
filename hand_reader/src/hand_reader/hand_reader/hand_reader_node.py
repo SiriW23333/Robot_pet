@@ -26,7 +26,8 @@ class PerceptionMonitor(Node):
         self.get_logger().info("节点初始化完成，等待数据...")
 
         #初始化串口
-        self.ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)  # 根据实际串口修改
+    self.ser1 = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)  # 根据实际串口修改
+
 
     def listener_callback(self, msg):
     with self.lock:
