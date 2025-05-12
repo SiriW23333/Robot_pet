@@ -1,8 +1,9 @@
 import rclpy
 from rclpy.node import Node
 from ai_msgs.msg import PerceptionTargets
-from hand_reader.srv import ASRCmd
-from USART import RDK2stm, stm2RDK
+from threading import Thread,Lock,Condition
+
+
 class PerceptionMonitor(Node):
 
     def __init__(self):
@@ -24,28 +25,77 @@ class PerceptionMonitor(Node):
         
         self.get_logger().info("节点初始化完成，等待数据...")
 
+        #初始化串口
+        self.ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)  # 根据实际串口修改
+
     def listener_callback(self, msg):
-      # 遍历所有目标
+    with self.lock:
         for target in msg.targets:
-            # 遍历目标的属性列表
             for attribute in target.attributes:
-                # 筛选手势类型属性
                 if attribute.type == "gesture":
                     self.gesture_value = attribute.value
                     self.get_logger().info(
-                        f"检测到手势: 类型={self.gesture_value}",
+                        f"检测到手势: 类型={self.gesture_value}"
                     )
+                    # 检测到特定手势后发送串口指令并等待响应
+                    if self.gesture_value is not None:
+                        self.waiting_for_response = True
+                        self.send_serial_command()
+                        self.condition.wait()  # 阻塞直到被唤醒
     
-    def USART_send(self):
-        self.sent_msg=False
-        if self.gesture_value == 4 and self.sent_msg==False:
-            RDK2stm(self.gesture_value)
-            self.sent_msg=True 
-        elif self.gesture_value == 14 and self.sent_msg==False:
-            RDK2stm(self.gesture_value)
-            self.sent_msg=True        
+    def send_serial_command(self):
+        if self.gesture_value ==5:
+            cmd = 0x43
+        elif self.gesture_value == 12:
+            cmd = 0x35
+        elif self.gesture_value == 13:
+            cmd = 0x36
+        elif self.gesture_value == 2:
+            cmd = 0x37
+        elif self.gesture_value == 3:
+            cmd = 0x40
 
-class ASRClient(Node):
+        if self.ser.is_open:
+            self.ser.write(bytes([cmd]))  # 发送二进制指令
+            self.get_logger().info("已发送串口指令")
+
+    def serial_listener(self):
+        while True:
+            data = ser.read(ser.in_waiting or 2).decode('UTF-8')
+            if data == b"OK":  # 收到下位机确认
+                with self.lock:
+                    self.waiting_for_response = False
+                    self.condition.notify()  # 唤醒手势线程
+                    self.get_logger().info("收到下位机响应，已唤醒手势识别")
+
+    def destroy_node(self):
+        self.ser.close()
+        self.serial_thread.join()
+        super().destroy_node()
+    '''
+手势	说明	数值
+ThumbUp	竖起大拇指	2  摇摆
+Victory	V手势	3  
+Mute	"嘘"手势	4
+Palm	手掌	5  打招呼
+Okay	OK手势	11  唤醒蓝牙语音
+ThumbLeft	大拇指向左	12  左转
+ThumbRight	大拇指向右	13  右转
+Awesome	666手势	14 
+'''
+
+'''
+下位机控制指令
+0x33 前进
+0x35 左转
+0x36 右转
+0x37 摇摆
+0x40 摇尾巴
+0x43 打招呼
+'''
+ 
+
+'''class ASRClient(Node):
     def __init__(self, monitor_node):
         super().__init__('asr_client')
         self.monitor_node = monitor_node
@@ -72,18 +122,4 @@ class ASRClient(Node):
         except Exception as e:
             self.get_logger().error(f'服务调用失败: {e}')
 
-
-
-def main(args=None):
-    rclpy.init(args=args)
-    monitor_node = PerceptionMonitor()
-    try:
-        rclpy.spin(monitor_node)
-    except KeyboardInterrupt:
-        monitor_node.get_logger().info("节点关闭")
-    finally:
-        monitor_node.destroy_node()
-        rclpy.shutdown()
-
-if __name__ == '__main__':
-    main()
+'''
