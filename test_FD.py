@@ -35,3 +35,5 @@ for i, output in enumerate(outputs):
     print(f"Output {i}:")
     print(f"Data: {output}")
     print(f"{output.buffer}")
+    print(f"{output.name}")
+    print(f"{output.properties}")
