@@ -1,6 +1,5 @@
 import sqlite3
 import numpy as np
-
 DB_PATH = 'faces.db'
 
 def init_db(db_path='faces.db'):

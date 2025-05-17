@@ -38,8 +38,19 @@ def output(frame):
     outputs = models[0].forward(frame)
     
 def postprocess(feature):
-    if find_similar_face(feature, 0.6) == None:
-        new_id=add_client(feature)
-        return new_id
-    else:
-        return find_similar_face(feature,0.6)
+    if outputs is not None:
+        try:
+            ser = serial.Serial('/dev/ttyS1', 9600, timeout=1)
+            ser.write(bytes([0x43]))
+            print("already indentify a people,say hello")
+        except Exception as e:
+            print("fail to send messeage to stm32")
+
+        if find_similar_face(feature, 0.6) == None:
+            new_id=add_client(feature)
+            print("new id:{new_id}")
+            return new_id
+        else:
+            id = find_similar_face(feature,0.6)
+            print("we find {id}")
+            return id
