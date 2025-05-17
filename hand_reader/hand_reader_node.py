@@ -8,7 +8,7 @@ from rclpy.node import Node
 from ai_msgs.msg import PerceptionTargets
 from threading import Thread, Lock, Condition
 import serial
-
+import subprocess
 class PerceptionMonitor(Node):
     def __init__(self):
         super().__init__('hand_reader')
@@ -19,6 +19,7 @@ class PerceptionMonitor(Node):
         
         # 配置QoS策略
         from rclpy.qos import QoSProfile, QoSReliabilityPolicy
+
         self.qos_profile = QoSProfile(
             depth=10,
             reliability=QoSReliabilityPolicy.BEST_EFFORT
@@ -59,14 +60,19 @@ class PerceptionMonitor(Node):
                             # 发送串口指令
                             cmd = self._get_command()
                             if cmd is not None:
-                                self.get_logger().info(f"准备发送指令: 0x{cmd:02X}")
-                                self.waiting_for_response = True
-                                self.ser.write(bytes([cmd]))
-                                self.get_logger().info("指令已发送，等待响应...")
-                                
-                                # 等待响应（最多等待2秒）
-                                if not self.condition.wait(timeout=2.0):
-                                    self.get_logger().warning("等待响应超时")
+                                if cmd == 3:
+                                    self.get_logger().info("检测到cmd=3，挂起本程序，启动大语言模型交互...")
+                                    subprocess.run(['python', '/root/Robot_pet/LLM_interface/voice_assistant_demo.py'],check=True)
+                                    self.get_logger().info("外部程序已退出，恢复本程序")
+                                else:
+                                    self.get_logger().info(f"准备发送指令: 0x{cmd:02X}")
+                                    self.waiting_for_response = True
+                                    self.ser.write(bytes([cmd]))
+                                    self.get_logger().info("指令已发送，等待响应...")
+                                    
+                                    # 等待响应（最多等待2秒）
+                                    if not self.condition.wait(timeout=2.0):
+                                        self.get_logger().warning("等待响应超时")
                         except Exception as e:
                             self.get_logger().error(f"处理手势时出错: {str(e)}")
                         finally:
@@ -78,7 +84,6 @@ class PerceptionMonitor(Node):
             12: 0x35,  # 左转
             13: 0x36,  # 右转
             2: 0x37,   # 摇摆
-            3: 0x40    # 摇尾巴
         }
         return cmd_map.get(self.gesture_value)
 
