@@ -1,8 +1,0 @@
-source;ros_domain_id.txt
-source;share/hand_reader/hook/pythonpath.ps1
-source;share/hand_reader/hook/pythonpath.dsv
-source;share/hand_reader/hook/pythonpath.sh
-source;ros_domain_id.txt
-source;share/hand_reader/hook/ament_prefix_path.ps1
-source;share/hand_reader/hook/ament_prefix_path.dsv
-source;share/hand_reader/hook/ament_prefix_path.sh
