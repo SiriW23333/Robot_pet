@@ -2,6 +2,10 @@ from hobot_dnn import pyeasy_dnn as dnn
 from hobot_vio import libsrcampy as srcampy
 import numpy as np
 import cv2
+import sys
+sys.path.append(r"..\\client_sqlite")
+from client_sqlite import get_favorability,add_client,find_similar_face
+
 
 #create model object
 models = dnn.load('./facenet.bin')
@@ -33,4 +37,9 @@ def preprocess_frame(frame):
 def output(frame):
     outputs = models[0].forward(frame)
     
-    
+def postprocess(feature):
+    if find_similar_face(feature, 0.6) == None:
+        new_id=add_client(feature)
+        return new_id
+    else:
+        return find_similar_face(feature,0.6)
