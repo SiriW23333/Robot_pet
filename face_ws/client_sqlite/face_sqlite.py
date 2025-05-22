@@ -66,19 +66,15 @@ def get_face_by_name(name):
 
     return result
 
-def favorability_increase(face_id, db_path='faces.db'):
+def set_favorability(name, value, db_path='faces.db'):
+    """根据姓名设置好感度Favorability"""
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
-
-    c.execute('''
-        UPDATE faces
-        SET Favorability = Favorability + 1
-        WHERE face_id = ?
-    ''', (face_id,))
-
+    c.execute('UPDATE faces SET Favorability=? WHERE name=?', (value, name))
     conn.commit()
     conn.close()
 
+    
 def find_similar_face(feature, threshold):
     """
     比较输入的feature与数据库中所有的feature，返回相似度大于阈值的face_id列表。
