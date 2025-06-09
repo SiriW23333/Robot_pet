@@ -4,7 +4,7 @@ This code is used to batch detect images in a folder.
 import argparse
 import os
 import sys
-
+import numpy as np
 import cv2
 from vision.ssd.predictor import Predictor
 import hobot_dnn.pyeasy_dnn as dnn
@@ -42,15 +42,25 @@ if args.net_type == 'slim':
     # model_path = "models/pretrained/version-slim-640.pth"
     net = create_mb_tiny_fd(len(class_names), is_test=True, device=test_device)
     predictor = create_mb_tiny_fd_predictor(net, candidate_size=args.candidate_size, device=test_device)
+    net.load(model_path)
 elif args.net_type == 'RFB':
-    model_path = "models/pretrained/version-RFB-320.pth"
+    model_path = "/root/Robot_pet/face_ws/face_recog/FD.bin"
+    if not os.path.exists(model_path):
+      print(f"Error: Model path {model_path} does not exist!")
+      sys.exit(1)
+
+    model = dnn.Model(model_path)
+    if model is None:
+        print("Error: Failed to load the model!")
+        sys.exit(1)
     # model_path = "models/pretrained/version-RFB-640.pth"
-    net = create_Mb_Tiny_RFB_fd(len(class_names), is_test=True, device=test_device)
-    predictor = create_Mb_Tiny_RFB_fd_predictor(net, candidate_size=args.candidate_size, device=test_device)
+    #net = create_Mb_Tiny_RFB_fd(len(class_names), is_test=True, device=test_device)
+    model=dnn.Model(model_path)
+    predictor = create_Mb_Tiny_RFB_fd_predictor(model, candidate_size=args.candidate_size, device=test_device)
 else:
     print("The net type is wrong!")
     sys.exit(1)
-net.load(model_path)
+#net.load(model_path)
 
 listdir = os.listdir(args.path)
 listdir.sort()  # 排序，保证第一张图顺序稳定
@@ -59,11 +69,23 @@ if len(listdir) == 0:
     print("No images found in the directory.")
     sys.exit(1)
 
-file_path = listdir[24]  # 只取第一张图片
+file_path = listdir[0]  # 只取第一张图片
 img_path = os.path.join(args.path, file_path)
 orig_image = cv2.imread(img_path)
 image = cv2.cvtColor(orig_image, cv2.COLOR_BGR2RGB)
-boxes, labels, probs = predictor.predict(image, args.candidate_size / 2, args.threshold)
+print(f"Image shape: {image.shape}, dtype: {image.dtype}")
+# resize到模型输入大小 (这里假设640x640,需根据模型调整)
+image_resized = cv2.resize(image, (640, 640))
+# 颜色通道 (根据模型调整是BGR还是RGB)
+image_resized = cv2.cvtColor(image_resized, cv2.COLOR_BGR2RGB)
+# 转为float32
+image_resized = image_resized.astype('float32')
+# 若模型要求归一化:
+image_resized = (image_resized - 127.5) / 128.0  # 示例归一化,需根据模型调整
+# 调整为CHW格式
+image_resized = np.transpose(image_resized, (2, 0, 1))
+tensor_input = dnn.create_tensor(image)
+boxes, labels, probs = predictor.predict(tensor_input)
 
 print(f"Processing image: {file_path}")
 print(f"Found {boxes.size(0)} faces")
