@@ -1,7 +1,6 @@
 import rclpy
 from rclpy.node import Node
 from ai_msgs.msg import PerceptionTargets
-from rclpy.qos import QoSProfile, QoSReliabilityPolicy
 import subprocess
 
 class PerceptionMonitor(Node):
@@ -10,12 +9,23 @@ class PerceptionMonitor(Node):
         super().__init__('hand_reader')
         self.gesture_value = None
         # 配置QoS策略
+        from rclpy.qos import QoSProfile, QoSReliabilityPolicy
         self.qos_profile = QoSProfile(
             depth=10,
             reliability=QoSReliabilityPolicy.BEST_EFFORT
         )
-      
-        
+        try:
+            self.process = subprocess.Popen(
+            ['bash', '-c', 'source /root/Robot_pet/hand_ws/start.sh'],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL
+            )
+            if  self.process.poll() is None:
+                self.get_logger().info("start.sh 脚本已成功启动。")
+            else:
+                self.get_logger().error("start.sh 脚本启动失败。")
+        except Exception as e:
+            self.get_logger().error(f"启动 start.sh 脚本时出错: {e}")
         # 初始化订阅者
         self.subscription = self.create_subscription(
             PerceptionTargets,
@@ -28,13 +38,11 @@ class PerceptionMonitor(Node):
 
 
     def listener_callback(self, msg):
-          for target in msg.targets:
-              for attribute in target.attributes:
-                  if attribute.type == "gesture":
-                      self.gesture_value = attribute.value
-                      self.get_logger().info(
-                          f"检测到手势: 类型={self.gesture_value}"
-                      )
+        self.get_logger().info(f"收到消息，共有 {len(msg.targets)} 个target")
+        for i, target in enumerate(msg.targets):
+            self.get_logger().info(f"Target[{i}]: {target}")
+            for j, attribute in enumerate(target.attributes):
+                self.get_logger().info(f"  Attribute[{j}]: type={attribute.type}, value={attribute.value}")
 
 def main(args=None):
     rclpy.init(args=args)
