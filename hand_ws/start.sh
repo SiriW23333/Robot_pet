@@ -2,7 +2,7 @@
 
 # 配置tros.b环境
 source /opt/tros/humble/setup.bash
-
+source /opt/ros/humble/setup.bash
 # 配置USB摄像头
 export CAM_TYPE=usb
 

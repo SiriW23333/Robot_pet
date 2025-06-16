@@ -75,8 +75,7 @@ class PerceptionMonitor(Node):
         try:
             cmd = self._get_command(gesture_value)
             if cmd is not None:
-                if cmd == 3 :
-                #and self.fav >= 10:
+                if cmd == 3 and self.fav >= 10:
                     self.get_logger().info("检测到cmd=3，挂起本程序，启动大语言模型交互...")
                     subprocess.run(['python', '/root/Robot_pet/LLM_interface/voice_assistant_demo.py'], check=True)
                     self.get_logger().info("外部程序已退出，恢复本程序")
@@ -95,13 +94,15 @@ class PerceptionMonitor(Node):
             serial_thread.start()
             self.ser.write(bytes([cmd]))
             self.get_logger().info("指令已发送，等待响应...")
-            with self.condition:
-                if not self.condition.wait(timeout=2.0):
-                    self.get_logger().warning("等待响应超时")
+            # with self.condition:
+            #     if not self.condition.wait(timeout=2.0):
+            #         self.get_logger().warning("等待响应超时")
         except Exception as e:
             self.get_logger().error(f"发送串口命令时出错: {str(e)}")
         finally:
             self.waiting_for_response = False
+            self.get_logger().info("串口命令发送完成，等待下一个手势...")
+            time.sleep(5)
 
     def _get_command(self, gesture_value):
         cmd_map = {
@@ -129,21 +130,21 @@ class PerceptionMonitor(Node):
                     break
                 if self.ser.in_waiting > 0:
                     data = self.ser.read(self.ser.in_waiting)
-                    self.get_logger().info(f"收到串口数据: {data}")
-                    if any(byte >= 48 and byte <= 57 for byte in data):
-                        with self.condition:
-                            self.fav += 1
-                            self.get_logger().info(f"收到数字响应，当前好感度: {self.fav}")
-                            report_fav(self.fav)
-                            self.get_logger().info(f"好感度已上报: {self.fav}")
-                            self.condition.notify()
-                            self.waiting_for_response = False
-                            break
-                time.sleep(0.1)
+                    data = [int(b) for b in data]
+                    hex_str = ' '.join(f'0x{b:02X}' for b in data)
+                    self.get_logger().info(f"收到串口数据(16进制): {hex_str}")
+                    self.fav += 1
+                    self.get_logger().info(f"收到数字响应，当前好感度: {self.fav}")
+                    report_fav(self.fav)
+                    self.get_logger().info(f"好感度已上报: {self.fav}")
+                    # with self.condition:
+                    #     self.condition.notify_all()
+                    #     self.get_logger().info("通知等待线程，串口响应已处理")
+                    #     self.waiting_for_response = False
+                    break
         except Exception as e:
             self.get_logger().error(f"串口监听出错: {str(e)}")
         finally:
-            self.waiting_for_response = False
             self.get_logger().info("串口监听线程结束")
 
     def destroy_node(self):
@@ -185,10 +186,10 @@ class PerceptionMonitor(Node):
         self.get_logger().info("节点已成功销毁。")
 
 def main(args=None):
-    # client_id = face_recognization()
-    # if client_id is None:
-    #     print("人脸识别失败或用户退出。应用将关闭。")
-    #     return
+    client_id = face_recognization()
+    if client_id is None:
+        print("人脸识别失败或用户退出。应用将关闭。")
+        return
     client_id = 1
     rclpy.init(args=args)
     node = PerceptionMonitor(id=client_id)

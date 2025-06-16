@@ -24,6 +24,16 @@ class VoiceAssistant:
         # 音频设备初始化
         self.p = pyaudio.PyAudio()
         self.input_stream = None
+
+        # 打印所有音频设备信息
+        print("可用音频设备列表：")
+        for i in range(self.p.get_device_count()):
+            info = self.p.get_device_info_by_index(i)
+            print(f"索引: {i}, 名称: {info['name']}, 输入通道数: {info['maxInputChannels']}")
+
+        # 指定声卡索引为2
+        self.input_device_index = 2
+
         self.output_stream = self.p.open(
             format=FORMAT,
             channels=CHANNELS,
@@ -75,6 +85,7 @@ class VoiceAssistant:
             }))
             resp = await self.ws.recv()
             print(f"会话创建成功：{resp}")
+            print(self.ws)
 
             while True:
                 async for message in self.ws:
@@ -113,13 +124,14 @@ class VoiceAssistant:
         """开始录音"""
         if not self.is_recording:
             self.is_recording = True
+            self.audio_buffer = queue.Queue()  # 每次新建队列，避免残留
             self.input_stream = self.p.open(
                 format=FORMAT,
                 channels=CHANNELS,
                 rate=RATE,
                 input=True,
                 frames_per_buffer=CHUNK,
-                input_device_index=0,
+                input_device_index=self.input_device_index,
                 stream_callback=self.audio_callback
             )
             # 提交asr任务
@@ -127,7 +139,7 @@ class VoiceAssistant:
                 self.send_audio(),
                 self.event_loop
             )
-            print("状态：录音中... ")
+            print(f"状态：录音中...（使用声卡索引 {self.input_device_index}）")
 
     def stop_recording(self):
         """停止录音并发送"""
@@ -135,7 +147,7 @@ class VoiceAssistant:
             self.is_recording = False
             self.input_stream.stop_stream()
             self.input_stream.close()
-            self.audio_buffer.put(None)
+            self.audio_buffer.put(None)  # 及时通知 send_audio 结束
             print("状态：音频返回中... ")
 
     async def send_audio(self):
@@ -150,14 +162,17 @@ class VoiceAssistant:
 
             # 发送录音数据
             while True:
-                data = self.audio_buffer.get()
+                try:
+                    data = self.audio_buffer.get(timeout=1)  # 避免永久阻塞
+                except queue.Empty:
+                    if not self.is_recording:
+                        break
+                    continue
                 if data is None:
-                    # 采音结束，commit开始大模型推理
                     await self.ws.send(json.dumps({"type": "input_audio_buffer.commit"}))
                     event = {
                         "type": "response.create",
                         "response": {
-                            # "modalities": ["audio"]
                             "modalities": ["audio", "text"]
                         }
                     }

@@ -22,6 +22,16 @@ class VoiceAssistant:
         # 音频设备初始化
         self.p = pyaudio.PyAudio()
         self.input_stream = None
+
+        # 查找并打印所有音频设备信息
+        print("可用音频设备列表：")
+        for i in range(self.p.get_device_count()):
+            info = self.p.get_device_info_by_index(i)
+            print(f"索引: {i}, 名称: {info['name']}, 输入通道数: {info['maxInputChannels']}")
+
+        # 指定声卡索引为1
+        self.input_device_index = 1
+
         self.output_stream = self.p.open(
             format=FORMAT,
             channels=CHANNELS,
@@ -52,9 +62,10 @@ class VoiceAssistant:
                 rate=RATE,
                 input=True,
                 frames_per_buffer=CHUNK,
-                stream_callback=self.audio_callback
+                stream_callback=self.audio_callback,
+                input_device_index=self.input_device_index  # 指定声卡索引
             )
-            print("状态：录音中... 🎤")
+            print(f"状态：录音中... 🎤（使用声卡索引 {self.input_device_index}）")
 
     def stop_recording(self):
         """停止录音并保存为文件"""

@@ -16,7 +16,7 @@ class PerceptionMonitor(Node):
         )
         try:
             self.process = subprocess.Popen(
-            ['bash', '-c', 'source /root/Robot_pet/hand_ws/start.sh'],
+            ['bash', '-c', 'source /opt/ros/humble/setup.bash && source /root/Robot_pet/install/setup.bash && /root/Robot_pet/hand_ws/start.sh'],
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL
             )
