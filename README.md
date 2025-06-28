@@ -89,7 +89,6 @@
 - **`LLM_interface/voice_assistant_demo.py`**  
   语音助手模块，集成大语言模型提供智能对话功能
 
-### 算法支持
 - **`hand_ws/`**  
   手势识别算法包，基于TROS算法框架实现手势检测和识别
 
