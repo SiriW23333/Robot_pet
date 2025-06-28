@@ -121,7 +121,7 @@ def identify_face(feature):
         
     try:
         # 查找相似人脸，阈值设为0.6
-        similar_faces = face_sqlite.find_similar_face(feature, 0.6)
+        similar_faces = face_sqlite.find_similar_face(feature, 0.5)
         
         if similar_faces:
             # 找到相似人脸，选择相似度最高的

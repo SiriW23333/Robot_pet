@@ -75,7 +75,7 @@ def main():
     parser.add_argument('--input_size', default=640, type=int, help='Model input size (width=height)')
     parser.add_argument('--threshold', default=0.6, type=float, help='Detection score threshold')
     parser.add_argument('--path', default="imgs", type=str, help='Input image directory or image file')
-    parser.add_argument('--model_path', default="/root/Robot_pet/FD.bin", type=str, help='Path to .bin model')
+    parser.add_argument('--model_path', default="/root/Robot_pet/face_ws/face_recog/FD.bin", type=str, help='Path to .bin model')
     parser.add_argument('--result_path', default="./detect_imgs_results", type=str, help='Output directory')
     args = parser.parse_args()
 

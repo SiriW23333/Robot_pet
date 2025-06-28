@@ -1,5 +1,0 @@
-[console_scripts]
-face_dataset_node = face_rec.face_dataset_node:main
-face_recognition_node = face_rec.face_recognition_node:main
-face_training_node = face_rec.face_training_node:main
-

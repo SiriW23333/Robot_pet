@@ -1,3 +1,0 @@
-Timestamp,Model_Path,Frames,Elapsed_Time(s),Avg_FPS,Avg_Preprocess(ms),Avg_Inference(ms),Avg_Postprocess(ms),Avg_Total(ms),Avg_Faces_Per_Frame
-2025-06-28 20:09:03,/root/Robot_pet/face_ws/retinaface-pytorch/model_output_dir/model_output_dir/retinaface.onnx,20,10.13,1.97,31.16,252.01,5.10,303.11,1.00
-2025-06-28 20:09:13,/root/Robot_pet/face_ws/retinaface-pytorch/model_output_dir/model_output_dir/retinaface.onnx,30,10.19,2.94,27.71,262.34,4.82,309.78,1.00

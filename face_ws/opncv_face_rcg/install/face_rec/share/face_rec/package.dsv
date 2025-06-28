@@ -1,8 +1,0 @@
-source;ros_domain_id.txt
-source;share/face_rec/hook/pythonpath.ps1
-source;share/face_rec/hook/pythonpath.dsv
-source;share/face_rec/hook/pythonpath.sh
-source;ros_domain_id.txt
-source;share/face_rec/hook/ament_prefix_path.ps1
-source;share/face_rec/hook/ament_prefix_path.dsv
-source;share/face_rec/hook/ament_prefix_path.sh
