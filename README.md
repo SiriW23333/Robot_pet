@@ -70,40 +70,42 @@
 ## 主要文件说明
 
 ### 核心模块
-- **`main/main.py`**  
+- **`RDK/main/main.py`**  
   系统主入口，负责初始化ROS节点和启动主要功能模块
 
-- **`main/PerceptionMonitor.py`**  
+- **`RDK/main/PerceptionMonitor.py`**  
   核心控制节点，集成人脸识别、手势识别、串口通信和云端通信功能
 
 ### 功能模块
-- **`face_ws/opencv/face_sqlite.py`**  
+- **`RDK/face_ws/opencv/face_sqlite.py`**  
   本地数据库操作接口，负责用户好感度和人脸特征向量的存储管理
 
-- **`face_ws/opencv/inference.py`**  
+- **`RDK/face_ws/opencv/inference.py`**  
   人脸识别推理模块，实现人脸检测、特征提取和身份识别
 
-- **`MQTT/tuya_mqtt.py`**  
+- **`RDK/MQTT/tuya_mqtt.py`**  
   MQTT云端通信模块，处理与涂鸦IoT平台的数据交换和设备控制
 
-- **`LLM_interface/voice_assistant_demo.py`**  
+- **`RDK/LLM_interface/voice_assistant_demo.py`**  
   语音助手模块，集成大语言模型提供智能对话功能
 
-- **`hand_ws/`**  
+- **`RDK/hand_ws/`**  
   手势识别算法包，基于TROS算法框架实现手势检测和识别
 
+- **`STM32F103C8T6/test/Project`**  
+  STM32F103C8T6 微控制器的Keil工程目录，包含用于下位机控制的固件代码
 ---
 
 ## 快速开始
 
-### 环境要求
+### 环境要求(RDK_X5)
 - Ubuntu 20.04 / 22.04
 - ROS 2 Humble/Foxy
 - Python 3.8+
 - 支持的摄像头设备
 - 串口设备 (/dev/ttyS1)
 
-# 启动项目
+# 启动项目(RDK_X5端)
 cd /root/Robot_pet/main
 python3 main.py
 
