@@ -6,8 +6,8 @@ from inference import face_recognization
 
 
 def main(args=None):
-    #client_id = face_recognization()
-    client_id = 1  #调试用
+    client_id = face_recognization()
+    #client_id = 1  #调试用
     if client_id is None:
         print("人脸识别失败或用户退出。应用将关闭。")
         return

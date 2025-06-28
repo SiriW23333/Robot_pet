@@ -1,0 +1,1932 @@
+{
+    "HZ_PREPROCESS_FOR_input.1": {
+        "type": "HzPreprocess",
+        "inputs": [
+            "input.1_calibrated",
+            "HZ_PREPROCESS_FOR_input.1_weight_calibrated",
+            "HZ_PREPROCESS_FOR_input.1_bias"
+        ],
+        "outputs": [
+            "HZ_PREPROCESS_FOR_input.1"
+        ],
+        "thresholds": [
+            [
+                127.0
+            ],
+            [
+                1.0,
+                1.0,
+                1.0
+            ],
+            []
+        ],
+        "cosine_similarity": "0.999953"
+    },
+    "/stage1/stage1.0/stage1.0.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "HZ_PREPROCESS_FOR_input.1_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.0/stage1.0.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                255.0
+            ]
+        ],
+        "cosine_similarity": "0.999734"
+    },
+    "/stage1/stage1.0/stage1.0.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage1/stage1.0/stage1.0.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.0/stage1.0.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                2.61656
+            ]
+        ],
+        "cosine_similarity": "0.999950"
+    },
+    "/stage1/stage1.1/stage1.1.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage1/stage1.0/stage1.0.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.1/stage1.1.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                2.61656
+            ]
+        ],
+        "cosine_similarity": "0.989299"
+    },
+    "/stage1/stage1.1/stage1.1.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage1/stage1.1/stage1.1.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.1/stage1.1.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                3.434891
+            ]
+        ],
+        "cosine_similarity": "0.998384"
+    },
+    "/stage1/stage1.1/stage1.1.3/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage1/stage1.1/stage1.1.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.1/stage1.1.3/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                3.434891
+            ]
+        ],
+        "cosine_similarity": "0.997673"
+    },
+    "/stage1/stage1.1/stage1.1.5/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage1/stage1.1/stage1.1.3/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.1/stage1.1.5/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                2.644696
+            ]
+        ],
+        "cosine_similarity": "0.997586"
+    },
+    "/stage1/stage1.2/stage1.2.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage1/stage1.1/stage1.1.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.2/stage1.2.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                2.644696
+            ]
+        ],
+        "cosine_similarity": "0.990677"
+    },
+    "/stage1/stage1.2/stage1.2.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage1/stage1.2/stage1.2.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.2/stage1.2.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                10.503358
+            ]
+        ],
+        "cosine_similarity": "0.993392"
+    },
+    "/stage1/stage1.2/stage1.2.3/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage1/stage1.2/stage1.2.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.2/stage1.2.3/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                10.503358
+            ]
+        ],
+        "cosine_similarity": "0.975749"
+    },
+    "/stage1/stage1.2/stage1.2.5/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage1/stage1.2/stage1.2.3/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.2/stage1.2.5/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                1.42184
+            ]
+        ],
+        "cosine_similarity": "0.982565"
+    },
+    "/stage1/stage1.3/stage1.3.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage1/stage1.2/stage1.2.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.3/stage1.3.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                1.42184
+            ]
+        ],
+        "cosine_similarity": "0.971041"
+    },
+    "/stage1/stage1.3/stage1.3.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage1/stage1.3/stage1.3.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.3/stage1.3.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                15.089412
+            ]
+        ],
+        "cosine_similarity": "0.983887"
+    },
+    "/stage1/stage1.3/stage1.3.3/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage1/stage1.3/stage1.3.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.3/stage1.3.3/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                15.089412
+            ]
+        ],
+        "cosine_similarity": "0.963704"
+    },
+    "/stage1/stage1.3/stage1.3.5/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage1/stage1.3/stage1.3.3/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.3/stage1.3.5/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                3.873269
+            ]
+        ],
+        "cosine_similarity": "0.972954"
+    },
+    "/stage1/stage1.4/stage1.4.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage1/stage1.3/stage1.3.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.4/stage1.4.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                3.873269
+            ]
+        ],
+        "cosine_similarity": "0.979734"
+    },
+    "/stage1/stage1.4/stage1.4.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage1/stage1.4/stage1.4.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.4/stage1.4.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                7.04376
+            ]
+        ],
+        "cosine_similarity": "0.991606"
+    },
+    "/stage1/stage1.4/stage1.4.3/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage1/stage1.4/stage1.4.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.4/stage1.4.3/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                7.04376
+            ]
+        ],
+        "cosine_similarity": "0.992592"
+    },
+    "/stage1/stage1.4/stage1.4.5/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage1/stage1.4/stage1.4.3/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.4/stage1.4.5/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                1.695862
+            ]
+        ],
+        "cosine_similarity": "0.993882"
+    },
+    "/stage1/stage1.5/stage1.5.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage1/stage1.4/stage1.4.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.5/stage1.5.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                1.695862
+            ]
+        ],
+        "cosine_similarity": "0.972744"
+    },
+    "/stage1/stage1.5/stage1.5.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage1/stage1.5/stage1.5.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.5/stage1.5.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                5.740839
+            ]
+        ],
+        "cosine_similarity": "0.976920"
+    },
+    "/stage1/stage1.5/stage1.5.3/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage1/stage1.5/stage1.5.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.5/stage1.5.3/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                5.740839
+            ]
+        ],
+        "cosine_similarity": "0.974932"
+    },
+    "/stage1/stage1.5/stage1.5.5/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage1/stage1.5/stage1.5.3/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage1/stage1.5/stage1.5.5/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                3.503098
+            ]
+        ],
+        "cosine_similarity": "0.979619"
+    },
+    "/stage2/stage2.0/stage2.0.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage1/stage1.5/stage1.5.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.0/stage2.0.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                3.503098
+            ]
+        ],
+        "cosine_similarity": "0.985404"
+    },
+    "/stage2/stage2.0/stage2.0.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage2/stage2.0/stage2.0.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.0/stage2.0.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                4.581501
+            ]
+        ],
+        "cosine_similarity": "0.987515"
+    },
+    "/stage2/stage2.0/stage2.0.3/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage2/stage2.0/stage2.0.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.0/stage2.0.3/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                4.581501
+            ]
+        ],
+        "cosine_similarity": "0.990476"
+    },
+    "/stage2/stage2.0/stage2.0.5/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage2/stage2.0/stage2.0.3/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.0/stage2.0.5/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                1.900764
+            ]
+        ],
+        "cosine_similarity": "0.991988"
+    },
+    "/stage2/stage2.1/stage2.1.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage2/stage2.0/stage2.0.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.1/stage2.1.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                1.900764
+            ]
+        ],
+        "cosine_similarity": "0.974731"
+    },
+    "/stage2/stage2.1/stage2.1.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage2/stage2.1/stage2.1.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.1/stage2.1.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                3.987245
+            ]
+        ],
+        "cosine_similarity": "0.977062"
+    },
+    "/stage2/stage2.1/stage2.1.3/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage2/stage2.1/stage2.1.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.1/stage2.1.3/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                3.987245
+            ]
+        ],
+        "cosine_similarity": "0.980239"
+    },
+    "/stage2/stage2.1/stage2.1.5/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage2/stage2.1/stage2.1.3/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.1/stage2.1.5/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                2.198062
+            ]
+        ],
+        "cosine_similarity": "0.983826"
+    },
+    "/stage2/stage2.2/stage2.2.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage2/stage2.1/stage2.1.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.2/stage2.2.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                2.198062
+            ]
+        ],
+        "cosine_similarity": "0.973550"
+    },
+    "/stage2/stage2.2/stage2.2.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage2/stage2.2/stage2.2.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.2/stage2.2.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                5.388894
+            ]
+        ],
+        "cosine_similarity": "0.977447"
+    },
+    "/stage2/stage2.2/stage2.2.3/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage2/stage2.2/stage2.2.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.2/stage2.2.3/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                5.388894
+            ]
+        ],
+        "cosine_similarity": "0.978959"
+    },
+    "/stage2/stage2.2/stage2.2.5/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage2/stage2.2/stage2.2.3/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.2/stage2.2.5/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                2.310016
+            ]
+        ],
+        "cosine_similarity": "0.984027"
+    },
+    "/stage2/stage2.3/stage2.3.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage2/stage2.2/stage2.2.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.3/stage2.3.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                2.310016
+            ]
+        ],
+        "cosine_similarity": "0.979342"
+    },
+    "/stage2/stage2.3/stage2.3.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage2/stage2.3/stage2.3.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.3/stage2.3.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                5.02107
+            ]
+        ],
+        "cosine_similarity": "0.982504"
+    },
+    "/stage2/stage2.3/stage2.3.3/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage2/stage2.3/stage2.3.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.3/stage2.3.3/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                5.02107
+            ]
+        ],
+        "cosine_similarity": "0.975254"
+    },
+    "/stage2/stage2.3/stage2.3.5/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage2/stage2.3/stage2.3.3/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.3/stage2.3.5/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                2.72768
+            ]
+        ],
+        "cosine_similarity": "0.978195"
+    },
+    "/stage2/stage2.4/stage2.4.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage2/stage2.3/stage2.3.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.4/stage2.4.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                2.72768
+            ]
+        ],
+        "cosine_similarity": "0.974069"
+    },
+    "/stage2/stage2.4/stage2.4.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage2/stage2.4/stage2.4.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.4/stage2.4.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                9.539565
+            ]
+        ],
+        "cosine_similarity": "0.976583"
+    },
+    "/stage2/stage2.4/stage2.4.3/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage2/stage2.4/stage2.4.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.4/stage2.4.3/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                9.539565
+            ]
+        ],
+        "cosine_similarity": "0.978968"
+    },
+    "/stage2/stage2.4/stage2.4.5/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage2/stage2.4/stage2.4.3/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.4/stage2.4.5/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                4.201159
+            ]
+        ],
+        "cosine_similarity": "0.982434"
+    },
+    "/stage2/stage2.5/stage2.5.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage2/stage2.4/stage2.4.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.5/stage2.5.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                4.201159
+            ]
+        ],
+        "cosine_similarity": "0.977928"
+    },
+    "/stage2/stage2.5/stage2.5.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage2/stage2.5/stage2.5.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.5/stage2.5.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                12.817726
+            ]
+        ],
+        "cosine_similarity": "0.980276"
+    },
+    "/stage2/stage2.5/stage2.5.3/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage2/stage2.5/stage2.5.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.5/stage2.5.3/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                12.817726
+            ]
+        ],
+        "cosine_similarity": "0.977568"
+    },
+    "/stage2/stage2.5/stage2.5.5/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage2/stage2.5/stage2.5.3/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage2/stage2.5/stage2.5.5/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                5.30763
+            ]
+        ],
+        "cosine_similarity": "0.978932"
+    },
+    "/stage3/stage3.0/stage3.0.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage2/stage2.5/stage2.5.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage3/stage3.0/stage3.0.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                5.30763
+            ]
+        ],
+        "cosine_similarity": "0.982749"
+    },
+    "/stage3/stage3.0/stage3.0.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage3/stage3.0/stage3.0.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage3/stage3.0/stage3.0.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                7.911901
+            ]
+        ],
+        "cosine_similarity": "0.984301"
+    },
+    "/stage3/stage3.0/stage3.0.3/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage3/stage3.0/stage3.0.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage3/stage3.0/stage3.0.3/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                7.911901
+            ]
+        ],
+        "cosine_similarity": "0.979955"
+    },
+    "/stage3/stage3.0/stage3.0.5/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage3/stage3.0/stage3.0.3/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage3/stage3.0/stage3.0.5/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                3.611262
+            ]
+        ],
+        "cosine_similarity": "0.975712"
+    },
+    "/stage3/stage3.1/stage3.1.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage3/stage3.0/stage3.0.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage3/stage3.1/stage3.1.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                3.611262
+            ]
+        ],
+        "cosine_similarity": "0.975161"
+    },
+    "/stage3/stage3.1/stage3.1.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage3/stage3.1/stage3.1.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage3/stage3.1/stage3.1.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                8.017412
+            ]
+        ],
+        "cosine_similarity": "0.977507"
+    },
+    "/stage3/stage3.1/stage3.1.3/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage3/stage3.1/stage3.1.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage3/stage3.1/stage3.1.3/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                8.017412
+            ]
+        ],
+        "cosine_similarity": "0.974218"
+    },
+    "/stage3/stage3.1/stage3.1.5/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/stage3/stage3.1/stage3.1.3/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/stage3/stage3.1/stage3.1.5/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                17.449539
+            ]
+        ],
+        "cosine_similarity": "0.958442"
+    },
+    "/output1/output1.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage1/stage1.5/stage1.5.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/output1/output1.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                3.503098
+            ]
+        ],
+        "cosine_similarity": "0.946303"
+    },
+    "/output1/output1.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/output1/output1.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/output1/output1.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                6.057851
+            ]
+        ],
+        "cosine_similarity": "0.943609"
+    },
+    "/output2/output2.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage2/stage2.5/stage2.5.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/output2/output2.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                5.30763
+            ]
+        ],
+        "cosine_similarity": "0.963693"
+    },
+    "/output2/output2.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/output2/output2.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/output2/output2.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                12.087859
+            ]
+        ],
+        "cosine_similarity": "0.956586"
+    },
+    "/output3/output3.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/stage3/stage3.1/stage3.1.5/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/output3/output3.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                17.449539
+            ]
+        ],
+        "cosine_similarity": "0.962011"
+    },
+    "/output3/output3.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/output3/output3.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/output3/output3.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                5.739231
+            ]
+        ],
+        "cosine_similarity": "0.955897"
+    },
+    "/Resize": {
+        "type": "Resize",
+        "inputs": [
+            "/output3/output3.2/LeakyRelu_output_0_calibrated",
+            "/Constant_4_output_0",
+            "/Constant_5_output_0",
+            "/Concat_output_0"
+        ],
+        "outputs": [
+            "/Resize_output_0"
+        ],
+        "thresholds": [
+            [
+                5.739231
+            ],
+            [],
+            [],
+            []
+        ],
+        "cosine_similarity": "0.955894"
+    },
+    "/Add": {
+        "type": "Add",
+        "inputs": [
+            "/output2/output2.2/LeakyRelu_output_0_calibrated",
+            "/Resize_output_0_calibrated"
+        ],
+        "outputs": [
+            "/Add_output_0"
+        ],
+        "thresholds": [
+            [
+                12.087859
+            ],
+            [
+                5.739231
+            ]
+        ],
+        "cosine_similarity": "0.961943"
+    },
+    "/merge2/merge2.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/Add_output_0_calibrated"
+        ],
+        "outputs": [
+            "/merge2/merge2.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                12.465453
+            ]
+        ],
+        "cosine_similarity": "0.961762"
+    },
+    "/merge2/merge2.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/merge2/merge2.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/merge2/merge2.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                11.219963
+            ]
+        ],
+        "cosine_similarity": "0.955897"
+    },
+    "/Resize_1": {
+        "type": "Resize",
+        "inputs": [
+            "/merge2/merge2.2/LeakyRelu_output_0_calibrated",
+            "/Constant_10_output_0",
+            "/Constant_11_output_0",
+            "/Concat_1_output_0"
+        ],
+        "outputs": [
+            "/Resize_1_output_0"
+        ],
+        "thresholds": [
+            [
+                11.219963
+            ],
+            [],
+            [],
+            []
+        ],
+        "cosine_similarity": "0.955881"
+    },
+    "/Add_1": {
+        "type": "Add",
+        "inputs": [
+            "/output1/output1.2/LeakyRelu_output_0_calibrated",
+            "/Resize_1_output_0_calibrated"
+        ],
+        "outputs": [
+            "/Add_1_output_0"
+        ],
+        "thresholds": [
+            [
+                6.057851
+            ],
+            [
+                11.219963
+            ]
+        ],
+        "cosine_similarity": "0.958415"
+    },
+    "/merge1/merge1.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/Add_1_output_0_calibrated"
+        ],
+        "outputs": [
+            "/merge1/merge1.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                12.145287
+            ]
+        ],
+        "cosine_similarity": "0.945879"
+    },
+    "/merge1/merge1.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/merge1/merge1.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/merge1/merge1.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                31.519217
+            ]
+        ],
+        "cosine_similarity": "0.911133"
+    },
+    "/ssh1/conv3X3/conv3X3.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/merge1/merge1.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh1/conv3X3/conv3X3.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                31.519217
+            ]
+        ],
+        "cosine_similarity": "0.890110"
+    },
+    "/ssh1/conv5X5_1/conv5X5_1.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/merge1/merge1.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh1/conv5X5_1/conv5X5_1.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                31.519217
+            ]
+        ],
+        "cosine_similarity": "0.916804"
+    },
+    "/ssh1/conv5X5_1/conv5X5_1.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/ssh1/conv5X5_1/conv5X5_1.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh1/conv5X5_1/conv5X5_1.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                48.833733
+            ]
+        ],
+        "cosine_similarity": "0.899978"
+    },
+    "/ssh1/conv5X5_2/conv5X5_2.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh1/conv5X5_1/conv5X5_1.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh1/conv5X5_2/conv5X5_2.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                48.833733
+            ]
+        ],
+        "cosine_similarity": "0.851923"
+    },
+    "/ssh1/conv7X7_2/conv7X7_2.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh1/conv5X5_1/conv5X5_1.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh1/conv7X7_2/conv7X7_2.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                48.833733
+            ]
+        ],
+        "cosine_similarity": "0.875744"
+    },
+    "/ssh1/conv7X7_2/conv7X7_2.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/ssh1/conv7X7_2/conv7X7_2.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh1/conv7X7_2/conv7X7_2.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                12.741359
+            ]
+        ],
+        "cosine_similarity": "0.863751"
+    },
+    "/ssh1/conv7x7_3/conv7x7_3.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh1/conv7X7_2/conv7X7_2.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh1/conv7x7_3/conv7x7_3.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                12.741359
+            ]
+        ],
+        "cosine_similarity": "0.661647"
+    },
+    "/ssh1/Concat": {
+        "type": "Concat",
+        "inputs": [
+            "/ssh1/conv3X3/conv3X3.0/Conv_output_0_calibrated",
+            "/ssh1/conv5X5_2/conv5X5_2.0/Conv_output_0_calibrated",
+            "/ssh1/conv7x7_3/conv7x7_3.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh1/Concat_output_0"
+        ],
+        "thresholds": [
+            [
+                130.223557
+            ],
+            [
+                130.223557
+            ],
+            [
+                130.223557
+            ]
+        ],
+        "cosine_similarity": "0.808591"
+    },
+    "/ssh1/Relu": {
+        "type": "Relu",
+        "inputs": [
+            "/ssh1/Concat_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh1/Relu_output_0"
+        ],
+        "thresholds": [
+            [
+                130.223557
+            ]
+        ],
+        "cosine_similarity": "0.836673"
+    },
+    "/ssh2/conv3X3/conv3X3.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/merge2/merge2.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh2/conv3X3/conv3X3.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                11.219963
+            ]
+        ],
+        "cosine_similarity": "0.958902"
+    },
+    "/ssh2/conv5X5_1/conv5X5_1.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/merge2/merge2.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh2/conv5X5_1/conv5X5_1.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                11.219963
+            ]
+        ],
+        "cosine_similarity": "0.958395"
+    },
+    "/ssh2/conv5X5_1/conv5X5_1.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/ssh2/conv5X5_1/conv5X5_1.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh2/conv5X5_1/conv5X5_1.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                5.894351
+            ]
+        ],
+        "cosine_similarity": "0.965054"
+    },
+    "/ssh2/conv5X5_2/conv5X5_2.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh2/conv5X5_1/conv5X5_1.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh2/conv5X5_2/conv5X5_2.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                5.894351
+            ]
+        ],
+        "cosine_similarity": "0.964482"
+    },
+    "/ssh2/conv7X7_2/conv7X7_2.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh2/conv5X5_1/conv5X5_1.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh2/conv7X7_2/conv7X7_2.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                5.894351
+            ]
+        ],
+        "cosine_similarity": "0.962837"
+    },
+    "/ssh2/conv7X7_2/conv7X7_2.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/ssh2/conv7X7_2/conv7X7_2.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh2/conv7X7_2/conv7X7_2.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                4.910645
+            ]
+        ],
+        "cosine_similarity": "0.958806"
+    },
+    "/ssh2/conv7x7_3/conv7x7_3.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh2/conv7X7_2/conv7X7_2.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh2/conv7x7_3/conv7x7_3.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                4.910645
+            ]
+        ],
+        "cosine_similarity": "0.958859"
+    },
+    "/ssh2/Concat": {
+        "type": "Concat",
+        "inputs": [
+            "/ssh2/conv3X3/conv3X3.0/Conv_output_0_calibrated",
+            "/ssh2/conv5X5_2/conv5X5_2.0/Conv_output_0_calibrated",
+            "/ssh2/conv7x7_3/conv7x7_3.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh2/Concat_output_0"
+        ],
+        "thresholds": [
+            [
+                10.305945
+            ],
+            [
+                10.305945
+            ],
+            [
+                10.305945
+            ]
+        ],
+        "cosine_similarity": "0.960140"
+    },
+    "/ssh2/Relu": {
+        "type": "Relu",
+        "inputs": [
+            "/ssh2/Concat_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh2/Relu_output_0"
+        ],
+        "thresholds": [
+            [
+                10.305945
+            ]
+        ],
+        "cosine_similarity": "0.965676"
+    },
+    "/ssh3/conv3X3/conv3X3.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/output3/output3.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh3/conv3X3/conv3X3.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                5.739231
+            ]
+        ],
+        "cosine_similarity": "0.972479"
+    },
+    "/ssh3/conv5X5_1/conv5X5_1.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/output3/output3.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh3/conv5X5_1/conv5X5_1.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                5.739231
+            ]
+        ],
+        "cosine_similarity": "0.969953"
+    },
+    "/ssh3/conv5X5_1/conv5X5_1.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/ssh3/conv5X5_1/conv5X5_1.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh3/conv5X5_1/conv5X5_1.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                4.778492
+            ]
+        ],
+        "cosine_similarity": "0.975702"
+    },
+    "/ssh3/conv5X5_2/conv5X5_2.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh3/conv5X5_1/conv5X5_1.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh3/conv5X5_2/conv5X5_2.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                4.778492
+            ]
+        ],
+        "cosine_similarity": "0.973573"
+    },
+    "/ssh3/conv7X7_2/conv7X7_2.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh3/conv5X5_1/conv5X5_1.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh3/conv7X7_2/conv7X7_2.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                4.778492
+            ]
+        ],
+        "cosine_similarity": "0.973981"
+    },
+    "/ssh3/conv7X7_2/conv7X7_2.2/LeakyRelu": {
+        "type": "LeakyRelu",
+        "inputs": [
+            "/ssh3/conv7X7_2/conv7X7_2.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh3/conv7X7_2/conv7X7_2.2/LeakyRelu_output_0"
+        ],
+        "thresholds": [
+            [
+                3.073546
+            ]
+        ],
+        "cosine_similarity": "0.970616"
+    },
+    "/ssh3/conv7x7_3/conv7x7_3.0/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh3/conv7X7_2/conv7X7_2.2/LeakyRelu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh3/conv7x7_3/conv7x7_3.0/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                3.073546
+            ]
+        ],
+        "cosine_similarity": "0.976042"
+    },
+    "/ssh3/Concat": {
+        "type": "Concat",
+        "inputs": [
+            "/ssh3/conv3X3/conv3X3.0/Conv_output_0_calibrated",
+            "/ssh3/conv5X5_2/conv5X5_2.0/Conv_output_0_calibrated",
+            "/ssh3/conv7x7_3/conv7x7_3.0/Conv_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh3/Concat_output_0"
+        ],
+        "thresholds": [
+            [
+                8.248926
+            ],
+            [
+                8.248926
+            ],
+            [
+                8.248926
+            ]
+        ],
+        "cosine_similarity": "0.974077"
+    },
+    "/ssh3/Relu": {
+        "type": "Relu",
+        "inputs": [
+            "/ssh3/Concat_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ssh3/Relu_output_0"
+        ],
+        "thresholds": [
+            [
+                8.248926
+            ]
+        ],
+        "cosine_similarity": "0.977409"
+    },
+    "/BboxHead.0/conv1x1/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh1/Relu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/BboxHead.0/conv1x1/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                130.223557
+            ]
+        ],
+        "cosine_similarity": "0.951976"
+    },
+    "/BboxHead.0/Transpose": {
+        "type": "Transpose",
+        "inputs": [
+            "/BboxHead.0/conv1x1/Conv_output_0"
+        ],
+        "outputs": [
+            "/BboxHead.0/Transpose_output_0"
+        ],
+        "thresholds": [
+            []
+        ],
+        "cosine_similarity": "0.951975"
+    },
+    "/BboxHead.0/Reshape": {
+        "type": "Reshape",
+        "inputs": [
+            "/BboxHead.0/Transpose_output_0",
+            "/BboxHead.0/Concat_output_0"
+        ],
+        "outputs": [
+            "/BboxHead.0/Reshape_output_0"
+        ],
+        "thresholds": [
+            [],
+            []
+        ],
+        "cosine_similarity": "0.951975"
+    },
+    "/BboxHead.1/conv1x1/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh2/Relu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/BboxHead.1/conv1x1/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                10.305945
+            ]
+        ],
+        "cosine_similarity": "0.966367"
+    },
+    "/BboxHead.1/Transpose": {
+        "type": "Transpose",
+        "inputs": [
+            "/BboxHead.1/conv1x1/Conv_output_0"
+        ],
+        "outputs": [
+            "/BboxHead.1/Transpose_output_0"
+        ],
+        "thresholds": [
+            []
+        ],
+        "cosine_similarity": "0.966368"
+    },
+    "/BboxHead.1/Reshape": {
+        "type": "Reshape",
+        "inputs": [
+            "/BboxHead.1/Transpose_output_0",
+            "/BboxHead.1/Concat_output_0"
+        ],
+        "outputs": [
+            "/BboxHead.1/Reshape_output_0"
+        ],
+        "thresholds": [
+            [],
+            []
+        ],
+        "cosine_similarity": "0.966368"
+    },
+    "/BboxHead.2/conv1x1/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh3/Relu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/BboxHead.2/conv1x1/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                8.248926
+            ]
+        ],
+        "cosine_similarity": "0.977352"
+    },
+    "/BboxHead.2/Transpose": {
+        "type": "Transpose",
+        "inputs": [
+            "/BboxHead.2/conv1x1/Conv_output_0"
+        ],
+        "outputs": [
+            "/BboxHead.2/Transpose_output_0"
+        ],
+        "thresholds": [
+            []
+        ],
+        "cosine_similarity": "0.977352"
+    },
+    "/BboxHead.2/Reshape": {
+        "type": "Reshape",
+        "inputs": [
+            "/BboxHead.2/Transpose_output_0",
+            "/BboxHead.2/Constant_output_0"
+        ],
+        "outputs": [
+            "/BboxHead.2/Reshape_output_0"
+        ],
+        "thresholds": [
+            [],
+            []
+        ],
+        "cosine_similarity": "0.977352"
+    },
+    "/Concat_2": {
+        "type": "Concat",
+        "inputs": [
+            "/BboxHead.0/Reshape_output_0",
+            "/BboxHead.1/Reshape_output_0",
+            "/BboxHead.2/Reshape_output_0"
+        ],
+        "outputs": [
+            "502"
+        ],
+        "thresholds": [
+            [],
+            [],
+            []
+        ],
+        "cosine_similarity": "0.953907"
+    },
+    "/ClassHead.0/conv1x1/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh1/Relu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ClassHead.0/conv1x1/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                130.223557
+            ]
+        ],
+        "cosine_similarity": "0.988129"
+    },
+    "/ClassHead.0/Transpose": {
+        "type": "Transpose",
+        "inputs": [
+            "/ClassHead.0/conv1x1/Conv_output_0"
+        ],
+        "outputs": [
+            "/ClassHead.0/Transpose_output_0"
+        ],
+        "thresholds": [
+            []
+        ],
+        "cosine_similarity": "0.988129"
+    },
+    "/ClassHead.0/Reshape": {
+        "type": "Reshape",
+        "inputs": [
+            "/ClassHead.0/Transpose_output_0",
+            "/ClassHead.0/Concat_output_0"
+        ],
+        "outputs": [
+            "/ClassHead.0/Reshape_output_0"
+        ],
+        "thresholds": [
+            [],
+            []
+        ],
+        "cosine_similarity": "0.988129"
+    },
+    "/ClassHead.1/conv1x1/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh2/Relu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ClassHead.1/conv1x1/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                10.305945
+            ]
+        ],
+        "cosine_similarity": "0.998205"
+    },
+    "/ClassHead.1/Transpose": {
+        "type": "Transpose",
+        "inputs": [
+            "/ClassHead.1/conv1x1/Conv_output_0"
+        ],
+        "outputs": [
+            "/ClassHead.1/Transpose_output_0"
+        ],
+        "thresholds": [
+            []
+        ],
+        "cosine_similarity": "0.998206"
+    },
+    "/ClassHead.1/Reshape": {
+        "type": "Reshape",
+        "inputs": [
+            "/ClassHead.1/Transpose_output_0",
+            "/ClassHead.1/Concat_output_0"
+        ],
+        "outputs": [
+            "/ClassHead.1/Reshape_output_0"
+        ],
+        "thresholds": [
+            [],
+            []
+        ],
+        "cosine_similarity": "0.998206"
+    },
+    "/ClassHead.2/conv1x1/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh3/Relu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/ClassHead.2/conv1x1/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                8.248926
+            ]
+        ],
+        "cosine_similarity": "0.998604"
+    },
+    "/ClassHead.2/Transpose": {
+        "type": "Transpose",
+        "inputs": [
+            "/ClassHead.2/conv1x1/Conv_output_0"
+        ],
+        "outputs": [
+            "/ClassHead.2/Transpose_output_0"
+        ],
+        "thresholds": [
+            []
+        ],
+        "cosine_similarity": "0.998604"
+    },
+    "/ClassHead.2/Reshape": {
+        "type": "Reshape",
+        "inputs": [
+            "/ClassHead.2/Transpose_output_0",
+            "/ClassHead.2/Constant_output_0"
+        ],
+        "outputs": [
+            "/ClassHead.2/Reshape_output_0"
+        ],
+        "thresholds": [
+            [],
+            []
+        ],
+        "cosine_similarity": "0.998604"
+    },
+    "/Concat_3": {
+        "type": "Concat",
+        "inputs": [
+            "/ClassHead.0/Reshape_output_0",
+            "/ClassHead.1/Reshape_output_0",
+            "/ClassHead.2/Reshape_output_0"
+        ],
+        "outputs": [
+            "531"
+        ],
+        "thresholds": [
+            [],
+            [],
+            []
+        ],
+        "cosine_similarity": "0.990181"
+    },
+    "/LandmarkHead.0/conv1x1/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh1/Relu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/LandmarkHead.0/conv1x1/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                130.223557
+            ]
+        ],
+        "cosine_similarity": "0.923840"
+    },
+    "/LandmarkHead.0/Transpose": {
+        "type": "Transpose",
+        "inputs": [
+            "/LandmarkHead.0/conv1x1/Conv_output_0"
+        ],
+        "outputs": [
+            "/LandmarkHead.0/Transpose_output_0"
+        ],
+        "thresholds": [
+            []
+        ],
+        "cosine_similarity": "0.923840"
+    },
+    "/LandmarkHead.0/Reshape": {
+        "type": "Reshape",
+        "inputs": [
+            "/LandmarkHead.0/Transpose_output_0",
+            "/LandmarkHead.0/Concat_output_0"
+        ],
+        "outputs": [
+            "/LandmarkHead.0/Reshape_output_0"
+        ],
+        "thresholds": [
+            [],
+            []
+        ],
+        "cosine_similarity": "0.923840"
+    },
+    "/LandmarkHead.1/conv1x1/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh2/Relu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/LandmarkHead.1/conv1x1/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                10.305945
+            ]
+        ],
+        "cosine_similarity": "0.968939"
+    },
+    "/LandmarkHead.1/Transpose": {
+        "type": "Transpose",
+        "inputs": [
+            "/LandmarkHead.1/conv1x1/Conv_output_0"
+        ],
+        "outputs": [
+            "/LandmarkHead.1/Transpose_output_0"
+        ],
+        "thresholds": [
+            []
+        ],
+        "cosine_similarity": "0.968939"
+    },
+    "/LandmarkHead.1/Reshape": {
+        "type": "Reshape",
+        "inputs": [
+            "/LandmarkHead.1/Transpose_output_0",
+            "/LandmarkHead.1/Concat_output_0"
+        ],
+        "outputs": [
+            "/LandmarkHead.1/Reshape_output_0"
+        ],
+        "thresholds": [
+            [],
+            []
+        ],
+        "cosine_similarity": "0.968939"
+    },
+    "/LandmarkHead.2/conv1x1/Conv": {
+        "type": "Conv",
+        "inputs": [
+            "/ssh3/Relu_output_0_calibrated"
+        ],
+        "outputs": [
+            "/LandmarkHead.2/conv1x1/Conv_output_0"
+        ],
+        "thresholds": [
+            [
+                8.248926
+            ]
+        ],
+        "cosine_similarity": "0.980124"
+    },
+    "/LandmarkHead.2/Transpose": {
+        "type": "Transpose",
+        "inputs": [
+            "/LandmarkHead.2/conv1x1/Conv_output_0"
+        ],
+        "outputs": [
+            "/LandmarkHead.2/Transpose_output_0"
+        ],
+        "thresholds": [
+            []
+        ],
+        "cosine_similarity": "0.980124"
+    },
+    "/LandmarkHead.2/Reshape": {
+        "type": "Reshape",
+        "inputs": [
+            "/LandmarkHead.2/Transpose_output_0",
+            "/LandmarkHead.2/Constant_output_0"
+        ],
+        "outputs": [
+            "/LandmarkHead.2/Reshape_output_0"
+        ],
+        "thresholds": [
+            [],
+            []
+        ],
+        "cosine_similarity": "0.980124"
+    },
+    "/Concat_4": {
+        "type": "Concat",
+        "inputs": [
+            "/LandmarkHead.0/Reshape_output_0",
+            "/LandmarkHead.1/Reshape_output_0",
+            "/LandmarkHead.2/Reshape_output_0"
+        ],
+        "outputs": [
+            "561"
+        ],
+        "thresholds": [
+            [],
+            [],
+            []
+        ],
+        "cosine_similarity": "0.932676"
+    }
+}

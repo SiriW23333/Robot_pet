@@ -1,0 +1,1089 @@
+{
+    "summary": {
+        "BPU OPs per frame (effective)": 1964748800,
+        "BPU OPs per run (effective)": 1964748800,
+        "BPU PE number": 1,
+        "BPU core number": 1,
+        "BPU march": "B25E",
+        "DDR bytes per frame": 5847776,
+        "DDR bytes per run": 5847776,
+        "DDR bytes per second": 3197994505,
+        "DDR megabytes per frame": 5.577,
+        "DDR megabytes per run": 5.577,
+        "DDR megabytes per second": 3049.8,
+        "FPS": 546.87,
+        "HBDK version": "3.49.15",
+        "compiling options": "-f hbir -m /tmp/tmpq6nx6mef/main_graph_subgraph_0.hbir -o /tmp/tmpq6nx6mef/main_graph_subgraph_0.hbm --march bayes-e --progressbar --O3 --debug --core-num 1 --fast --jobs 8 --input-layout NHWC --output-layout NHWC --input-source ddr",
+        "frame per run": 1,
+        "frame per second": 546.87,
+        "input features": [
+            [
+                "input name",
+                "input size"
+            ],
+            [
+                "input.1",
+                "1x3x640x640"
+            ]
+        ],
+        "interval computing unit utilization": [
+            0.879,
+            0.974,
+            0.972,
+            0.783,
+            0.959,
+            0.958,
+            0.968,
+            0.954,
+            0.827,
+            0.873,
+            0.961,
+            0.874,
+            0.987,
+            0.986,
+            0.982,
+            0.785,
+            0.655,
+            0.398,
+            0.036
+        ],
+        "interval computing units utilization": [
+            0.879,
+            0.974,
+            0.972,
+            0.783,
+            0.959,
+            0.958,
+            0.968,
+            0.954,
+            0.827,
+            0.873,
+            0.961,
+            0.874,
+            0.987,
+            0.986,
+            0.982,
+            0.785,
+            0.655,
+            0.398,
+            0.036
+        ],
+        "interval loading bandwidth (megabytes/s)": [
+            3552,
+            3362,
+            3222,
+            2938,
+            3425,
+            3528,
+            1404,
+            250,
+            473,
+            832,
+            1978,
+            2731,
+            1379,
+            36,
+            551,
+            698,
+            440,
+            303,
+            29
+        ],
+        "interval number": 19,
+        "interval storing bandwidth (megabytes/s)": [
+            1312,
+            1757,
+            2165,
+            2148,
+            1084,
+            0,
+            0,
+            0,
+            1953,
+            1953,
+            29,
+            146,
+            117,
+            0,
+            0,
+            1114,
+            3175,
+            5326,
+            4020
+        ],
+        "interval time (ms)": 0.1,
+        "latency (ms)": 1.83,
+        "latency (ms) by segments": [
+            1.829
+        ],
+        "latency (us)": 1828.6,
+        "layer details": [
+            [
+                "layer",
+                "ops",
+                "original output shape",
+                "aligned output shape",
+                "computing cost (no DDR)",
+                "load/store cost",
+                "active period of time"
+            ],
+            [
+                "HZ_PREPROCESS_FOR_input.1",
+                "2,457,600",
+                "[1,640,640,3]",
+                "[1,640,640,8]",
+                "255 us (13.9% of model)",
+                "175 us (9.5% of model)",
+                "0 ~ 365 us (365)"
+            ],
+            [
+                "/stage1/stage1.0/stage1.0.0/Conv",
+                "44,236,800",
+                "[1,320,320,8]",
+                "[1,320,320,16]",
+                "49 us (2.6% of model)",
+                "1 us (0% of model)",
+                "10 ~ 367 us (357)"
+            ],
+            [
+                "/stage1/stage1.0/stage1.0.2/LeakyRelu",
+                "0",
+                "[1,320,320,8]",
+                "[1,320,320,8]",
+                "28 us (1.5% of model)",
+                "4 us (0.2% of model)",
+                "11 ~ 369 us (358)"
+            ],
+            [
+                "/stage1/stage1.1/stage1.1.0/Conv",
+                "14,745,600",
+                "[1,320,320,8]",
+                "[1,320,320,8]",
+                "19 us (1.0% of model)",
+                "121 us (6.6% of model)",
+                "27 ~ 383 us (356)"
+            ],
+            [
+                "/stage1/stage1.1/stage1.1.2/LeakyRelu",
+                "0",
+                "[1,320,320,8]",
+                "[1,320,320,8]",
+                "28 us (1.5% of model)",
+                "123 us (6.7% of model)",
+                "362 ~ 570 us (208)"
+            ],
+            [
+                "/stage1/stage1.1/stage1.1.3/Conv",
+                "26,214,400",
+                "[1,320,320,16]",
+                "[1,320,320,16]",
+                "25 us (1.3% of model)",
+                "1 us (0% of model)",
+                "367 ~ 571 us (204)"
+            ],
+            [
+                "/stage1/stage1.1/stage1.1.5/LeakyRelu",
+                "0",
+                "[1,320,320,16]",
+                "[1,320,320,16]",
+                "80 us (4.3% of model)",
+                "4 us (0.2% of model)",
+                "368 ~ 575 us (207)"
+            ],
+            [
+                "/stage1/stage1.2/stage1.2.0/Conv",
+                "7,372,800",
+                "[1,160,160,16]",
+                "[1,160,160,16]",
+                "50 us (2.7% of model)",
+                "1 us (0% of model)",
+                "372 ~ 697 us (325)"
+            ],
+            [
+                "/stage1/stage1.2/stage1.2.2/LeakyRelu",
+                "0",
+                "[1,160,160,16]",
+                "[1,160,160,16]",
+                "14 us (0.7% of model)",
+                "4 us (0.2% of model)",
+                "390 ~ 698 us (308)"
+            ],
+            [
+                "/stage1/stage1.2/stage1.2.3/Conv",
+                "26,214,400",
+                "[1,160,160,32]",
+                "[1,160,160,32]",
+                "14 us (0.7% of model)",
+                "1 us (0% of model)",
+                "360 ~ 703 us (343)"
+            ],
+            [
+                "/stage1/stage1.2/stage1.2.5/LeakyRelu",
+                "0",
+                "[1,160,160,32]",
+                "[1,160,160,32]",
+                "27 us (1.4% of model)",
+                "4 us (0.2% of model)",
+                "360 ~ 706 us (346)"
+            ],
+            [
+                "/stage1/stage1.3/stage1.3.0/Conv",
+                "14,745,600",
+                "[1,160,160,32]",
+                "[1,160,160,32]",
+                "18 us (0.9% of model)",
+                "1 us (0% of model)",
+                "572 ~ 721 us (149)"
+            ],
+            [
+                "/stage1/stage1.3/stage1.3.2/LeakyRelu",
+                "0",
+                "[1,160,160,32]",
+                "[1,160,160,32]",
+                "27 us (1.4% of model)",
+                "4 us (0.2% of model)",
+                "377 ~ 735 us (358)"
+            ],
+            [
+                "/stage1/stage1.3/stage1.3.3/Conv",
+                "52,428,800",
+                "[1,160,160,32]",
+                "[1,160,160,32]",
+                "14 us (0.7% of model)",
+                "1 us (0% of model)",
+                "381 ~ 738 us (357)"
+            ],
+            [
+                "/stage1/stage1.3/stage1.3.5/LeakyRelu",
+                "0",
+                "[1,160,160,32]",
+                "[1,160,160,32]",
+                "40 us (2.1% of model)",
+                "4 us (0.2% of model)",
+                "381 ~ 744 us (363)"
+            ],
+            [
+                "/stage1/stage1.4/stage1.4.0/Conv",
+                "3,686,400",
+                "[1,80,80,32]",
+                "[1,80,80,32]",
+                "26 us (1.4% of model)",
+                "1 us (0% of model)",
+                "576 ~ 747 us (171)"
+            ],
+            [
+                "/stage1/stage1.4/stage1.4.2/LeakyRelu",
+                "0",
+                "[1,80,80,32]",
+                "[1,80,80,32]",
+                "7 us (0.3% of model)",
+                "2 us (0.1% of model)",
+                "718 ~ 773 us (55)"
+            ],
+            [
+                "/stage1/stage1.4/stage1.4.3/Conv",
+                "26,214,400",
+                "[1,80,80,64]",
+                "[1,80,80,64]",
+                "7 us (0.3% of model)",
+                "1 us (0% of model)",
+                "703 ~ 775 us (72)"
+            ],
+            [
+                "/stage1/stage1.4/stage1.4.5/LeakyRelu",
+                "0",
+                "[1,80,80,64]",
+                "[1,80,80,64]",
+                "13 us (0.7% of model)",
+                "2 us (0.1% of model)",
+                "738 ~ 778 us (40)"
+            ],
+            [
+                "/stage1/stage1.5/stage1.5.0/Conv",
+                "7,372,800",
+                "[1,80,80,64]",
+                "[1,80,80,64]",
+                "9 us (0.5% of model)",
+                "1 us (0% of model)",
+                "722 ~ 782 us (60)"
+            ],
+            [
+                "/stage1/stage1.5/stage1.5.2/LeakyRelu",
+                "0",
+                "[1,80,80,64]",
+                "[1,80,80,64]",
+                "13 us (0.7% of model)",
+                "1 us (0% of model)",
+                "29 ~ 795 us (766)"
+            ],
+            [
+                "/stage1/stage1.5/stage1.5.3/Conv",
+                "52,428,800",
+                "[1,80,80,64]",
+                "[1,80,80,64]",
+                "13 us (0.7% of model)",
+                "2 us (0% of model)",
+                "748 ~ 852 us (104)"
+            ],
+            [
+                "/stage1/stage1.5/stage1.5.5/LeakyRelu",
+                "0",
+                "[1,80,80,64]",
+                "[1,80,80,64]",
+                "20 us (1.0% of model)",
+                "59 us (3.2% of model)",
+                "750 ~ 885 us (135)"
+            ],
+            [
+                "/stage2/stage2.0/stage2.0.0/Conv",
+                "1,843,200",
+                "[1,40,40,64]",
+                "[1,40,48,64]",
+                "14 us (0.7% of model)",
+                "1 us (0% of model)",
+                "753 ~ 888 us (135)"
+            ],
+            [
+                "/stage2/stage2.0/stage2.0.2/LeakyRelu",
+                "0",
+                "[1,40,40,64]",
+                "[1,40,40,64]",
+                "4 us (0.2% of model)",
+                "2 us (0.1% of model)",
+                "760 ~ 889 us (129)"
+            ],
+            [
+                "/stage2/stage2.0/stage2.0.3/Conv",
+                "26,214,400",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "7 us (0.3% of model)",
+                "2 us (0.1% of model)",
+                "753 ~ 890 us (137)"
+            ],
+            [
+                "/stage2/stage2.0/stage2.0.5/LeakyRelu",
+                "0",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "7 us (0.3% of model)",
+                "2 us (0.1% of model)",
+                "763 ~ 892 us (129)"
+            ],
+            [
+                "/stage2/stage2.1/stage2.1.0/Conv",
+                "3,686,400",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "5 us (0.2% of model)",
+                "1 us (0% of model)",
+                "759 ~ 898 us (139)"
+            ],
+            [
+                "/stage2/stage2.1/stage2.1.2/LeakyRelu",
+                "0",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "7 us (0.3% of model)",
+                "2 us (0.1% of model)",
+                "772 ~ 901 us (129)"
+            ],
+            [
+                "/stage2/stage2.1/stage2.1.3/Conv",
+                "52,428,800",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "14 us (0.7% of model)",
+                "3 us (0.1% of model)",
+                "765 ~ 904 us (139)"
+            ],
+            [
+                "/stage2/stage2.1/stage2.1.5/LeakyRelu",
+                "0",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "7 us (0.3% of model)",
+                "2 us (0.1% of model)",
+                "776 ~ 908 us (132)"
+            ],
+            [
+                "/stage2/stage2.2/stage2.2.0/Conv",
+                "3,686,400",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "5 us (0.2% of model)",
+                "1 us (0% of model)",
+                "780 ~ 912 us (132)"
+            ],
+            [
+                "/stage2/stage2.2/stage2.2.2/LeakyRelu",
+                "0",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "7 us (0.3% of model)",
+                "2 us (0.1% of model)",
+                "723 ~ 914 us (191)"
+            ],
+            [
+                "/stage2/stage2.2/stage2.2.3/Conv",
+                "52,428,800",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "14 us (0.7% of model)",
+                "3 us (0.1% of model)",
+                "781 ~ 947 us (166)"
+            ],
+            [
+                "/stage2/stage2.2/stage2.2.5/LeakyRelu",
+                "0",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "7 us (0.3% of model)",
+                "2 us (0.1% of model)",
+                "852 ~ 948 us (96)"
+            ],
+            [
+                "/stage2/stage2.3/stage2.3.0/Conv",
+                "3,686,400",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "5 us (0.2% of model)",
+                "1 us (0% of model)",
+                "782 ~ 957 us (175)"
+            ],
+            [
+                "/stage2/stage2.3/stage2.3.2/LeakyRelu",
+                "0",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "7 us (0.3% of model)",
+                "2 us (0.1% of model)",
+                "885 ~ 958 us (73)"
+            ],
+            [
+                "/stage2/stage2.3/stage2.3.3/Conv",
+                "52,428,800",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "14 us (0.7% of model)",
+                "3 us (0.1% of model)",
+                "855 ~ 961 us (106)"
+            ],
+            [
+                "/stage2/stage2.3/stage2.3.5/LeakyRelu",
+                "0",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "8 us (0.4% of model)",
+                "4 us (0.2% of model)",
+                "947 ~ 990 us (43)"
+            ],
+            [
+                "/stage2/stage2.4/stage2.4.0/Conv",
+                "3,686,400",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "5 us (0.2% of model)",
+                "1 us (0% of model)",
+                "862 ~ 993 us (131)"
+            ],
+            [
+                "/stage2/stage2.4/stage2.4.2/LeakyRelu",
+                "0",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "8 us (0.4% of model)",
+                "4 us (0.2% of model)",
+                "951 ~ 996 us (45)"
+            ],
+            [
+                "/stage2/stage2.4/stage2.4.3/Conv",
+                "52,428,800",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "14 us (0.7% of model)",
+                "3 us (0.1% of model)",
+                "912 ~ 999 us (87)"
+            ],
+            [
+                "/stage2/stage2.4/stage2.4.5/LeakyRelu",
+                "0",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "8 us (0.4% of model)",
+                "4 us (0.2% of model)",
+                "957 ~ 1026 us (69)"
+            ],
+            [
+                "/stage2/stage2.5/stage2.5.0/Conv",
+                "3,686,400",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "5 us (0.2% of model)",
+                "1 us (0% of model)",
+                "890 ~ 1028 us (138)"
+            ],
+            [
+                "/stage2/stage2.5/stage2.5.2/LeakyRelu",
+                "0",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "8 us (0.4% of model)",
+                "4 us (0.2% of model)",
+                "970 ~ 1030 us (60)"
+            ],
+            [
+                "/stage2/stage2.5/stage2.5.3/Conv",
+                "52,428,800",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "14 us (0.7% of model)",
+                "3 us (0.1% of model)",
+                "962 ~ 1033 us (71)"
+            ],
+            [
+                "/stage2/stage2.5/stage2.5.5/LeakyRelu",
+                "0",
+                "[1,40,40,128]",
+                "[1,40,40,128]",
+                "10 us (0.5% of model)",
+                "1 us (0% of model)",
+                "978 ~ 1043 us (65)"
+            ],
+            [
+                "/stage3/stage3.0/stage3.0.0/Conv",
+                "921,600",
+                "[1,20,20,128]",
+                "[1,20,32,128]",
+                "9 us (0.4% of model)",
+                "1 us (0% of model)",
+                "978 ~ 1052 us (74)"
+            ],
+            [
+                "/stage3/stage3.0/stage3.0.2/LeakyRelu",
+                "0",
+                "[1,20,20,128]",
+                "[1,20,24,128]",
+                "2 us (0.1% of model)",
+                "1 us (0% of model)",
+                "918 ~ 1054 us (136)"
+            ],
+            [
+                "/stage3/stage3.0/stage3.0.3/Conv",
+                "26,214,400",
+                "[1,20,20,256]",
+                "[1,20,24,256]",
+                "8 us (0.4% of model)",
+                "6 us (0.3% of model)",
+                "991 ~ 1063 us (72)"
+            ],
+            [
+                "/stage3/stage3.0/stage3.0.5/LeakyRelu",
+                "0",
+                "[1,20,20,256]",
+                "[1,20,24,256]",
+                "4 us (0.2% of model)",
+                "1 us (0% of model)",
+                "935 ~ 1067 us (132)"
+            ],
+            [
+                "/stage3/stage3.1/stage3.1.0/Conv",
+                "1,843,200",
+                "[1,20,20,256]",
+                "[1,20,24,256]",
+                "3 us (0.1% of model)",
+                "2 us (0% of model)",
+                "890 ~ 1071 us (181)"
+            ],
+            [
+                "/stage3/stage3.1/stage3.1.2/LeakyRelu",
+                "0",
+                "[1,20,20,256]",
+                "[1,20,24,256]",
+                "4 us (0.2% of model)",
+                "1 us (0% of model)",
+                "936 ~ 1075 us (139)"
+            ],
+            [
+                "/stage3/stage3.1/stage3.1.3/Conv",
+                "52,428,800",
+                "[1,20,20,256]",
+                "[1,20,24,256]",
+                "16 us (0.8% of model)",
+                "10 us (0.5% of model)",
+                "923 ~ 1090 us (167)"
+            ],
+            [
+                "/stage3/stage3.1/stage3.1.5/LeakyRelu",
+                "0",
+                "[1,20,20,256]",
+                "[1,20,24,256]",
+                "4 us (0.2% of model)",
+                "2 us (0.1% of model)",
+                "1077 ~ 1107 us (30)"
+            ],
+            [
+                "/output1/output1.0/Conv",
+                "52,428,800",
+                "[1,80,80,64]",
+                "[1,80,80,64]",
+                "13 us (0.7% of model)",
+                "59 us (3.2% of model)",
+                "859 ~ 1180 us (321)"
+            ],
+            [
+                "/output1/output1.2/LeakyRelu",
+                "0",
+                "[1,80,80,64]",
+                "[1,80,80,64]",
+                "13 us (0.7% of model)",
+                "2 us (0.1% of model)",
+                "1075 ~ 1188 us (113)"
+            ],
+            [
+                "/output2/output2.0/Conv",
+                "26,214,400",
+                "[1,40,40,64]",
+                "[1,40,40,64]",
+                "7 us (0.3% of model)",
+                "2 us (0.1% of model)",
+                "996 ~ 1127 us (131)"
+            ],
+            [
+                "/output2/output2.2/LeakyRelu",
+                "0",
+                "[1,40,40,64]",
+                "[1,40,40,64]",
+                "4 us (0.2% of model)",
+                "2 us (0.1% of model)",
+                "1085 ~ 1128 us (43)"
+            ],
+            [
+                "/output3/output3.0/Conv",
+                "13,107,200",
+                "[1,20,20,64]",
+                "[1,20,24,64]",
+                "4 us (0.2% of model)",
+                "3 us (0.1% of model)",
+                "995 ~ 1117 us (122)"
+            ],
+            [
+                "/output3/output3.2/LeakyRelu",
+                "0",
+                "[1,20,20,64]",
+                "[1,20,24,64]",
+                "2 us (0.1% of model)",
+                "9 us (0.4% of model)",
+                "1082 ~ 1128 us (46)"
+            ],
+            [
+                "/Resize",
+                "0",
+                "[1,40,40,64]",
+                "[1,40,40,64]",
+                "8 us (0.4% of model)",
+                "0",
+                "1106 ~ 1130 us (24)"
+            ],
+            [
+                "/Add",
+                "0",
+                "[1,40,40,64]",
+                "[1,40,40,64]",
+                "7 us (0.3% of model)",
+                "2 us (0.1% of model)",
+                "29 ~ 1134 us (1105)"
+            ],
+            [
+                "/merge2/merge2.0/Conv",
+                "117,964,800",
+                "[1,40,40,64]",
+                "[1,40,40,64]",
+                "29 us (1.5% of model)",
+                "6 us (0.3% of model)",
+                "1052 ~ 1163 us (111)"
+            ],
+            [
+                "/merge2/merge2.2/LeakyRelu",
+                "0",
+                "[1,40,40,64]",
+                "[1,40,40,64]",
+                "4 us (0.2% of model)",
+                "1 us (0% of model)",
+                "1088 ~ 1185 us (97)"
+            ],
+            [
+                "/Resize_1",
+                "0",
+                "[1,80,80,64]",
+                "[1,80,80,64]",
+                "30 us (1.6% of model)",
+                "0",
+                "1188 ~ 1338 us (150)"
+            ],
+            [
+                "/Add_1",
+                "0",
+                "[1,80,80,64]",
+                "[1,80,80,64]",
+                "28 us (1.5% of model)",
+                "2 us (0.1% of model)",
+                "1093 ~ 1369 us (276)"
+            ],
+            [
+                "/merge1/merge1.0/Conv",
+                "471,859,200",
+                "[1,80,80,64]",
+                "[1,80,80,64]",
+                "115 us (6.2% of model)",
+                "6 us (0.3% of model)",
+                "1180 ~ 1405 us (225)"
+            ],
+            [
+                "/merge1/merge1.2/LeakyRelu",
+                "0",
+                "[1,80,80,64]",
+                "[1,80,80,64]",
+                "14 us (0.7% of model)",
+                "4 us (0.2% of model)",
+                "1189 ~ 1415 us (226)"
+            ],
+            [
+                "/ssh1/conv3X3/conv3X3.0/Conv",
+                "235,929,600",
+                "[1,80,80,32]",
+                "[1,80,80,32]",
+                "58 us (3.1% of model)",
+                "3 us (0.1% of model)",
+                "1142 ~ 1462 us (320)"
+            ],
+            [
+                "/ssh1/conv5X5_1/conv5X5_1.0/Conv",
+                "117,964,800",
+                "[1,80,80,16]",
+                "[1,80,80,16]",
+                "30 us (1.6% of model)",
+                "2 us (0.1% of model)",
+                "1089 ~ 1441 us (352)"
+            ],
+            [
+                "/ssh1/conv5X5_1/conv5X5_1.2/LeakyRelu",
+                "0",
+                "[1,80,80,16]",
+                "[1,80,80,16]",
+                "4 us (0.2% of model)",
+                "4 us (0.2% of model)",
+                "1201 ~ 1441 us (240)"
+            ],
+            [
+                "/ssh1/conv5X5_2/conv5X5_2.0/Conv",
+                "29,491,200",
+                "[1,80,80,16]",
+                "[1,80,80,16]",
+                "7 us (0.3% of model)",
+                "1 us (0% of model)",
+                "1228 ~ 1449 us (221)"
+            ],
+            [
+                "/ssh1/conv7X7_2/conv7X7_2.0/Conv",
+                "29,491,200",
+                "[1,80,80,16]",
+                "[1,80,80,16]",
+                "7 us (0.3% of model)",
+                "1 us (0% of model)",
+                "1197 ~ 1456 us (259)"
+            ],
+            [
+                "/ssh1/conv7X7_2/conv7X7_2.2/LeakyRelu",
+                "0",
+                "[1,80,80,16]",
+                "[1,80,80,16]",
+                "3 us (0.1% of model)",
+                "1 us (0% of model)",
+                "1361 ~ 1459 us (98)"
+            ],
+            [
+                "/ssh1/conv7x7_3/conv7x7_3.0/Conv",
+                "29,491,200",
+                "[1,80,80,16]",
+                "[1,80,80,16]",
+                "7 us (0.3% of model)",
+                "1 us (0% of model)",
+                "1192 ~ 1481 us (289)"
+            ],
+            [
+                "/ssh1/Concat",
+                "0",
+                "[1,80,80,64]",
+                "[1,80,80,64]",
+                "13 us (0.7% of model)",
+                "0",
+                "1462 ~ 1484 us (22)"
+            ],
+            [
+                "/ssh1/Relu",
+                "0",
+                "[1,80,80,64]",
+                "[1,80,80,64]",
+                "13 us (0.7% of model)",
+                "1 us (0% of model)",
+                "1339 ~ 1499 us (160)"
+            ],
+            [
+                "/ssh2/conv3X3/conv3X3.0/Conv",
+                "58,982,400",
+                "[1,40,40,32]",
+                "[1,40,40,32]",
+                "14 us (0.7% of model)",
+                "4 us (0.1% of model)",
+                "1405 ~ 1428 us (23)"
+            ],
+            [
+                "/ssh2/conv5X5_1/conv5X5_1.0/Conv",
+                "29,491,200",
+                "[1,40,40,16]",
+                "[1,40,40,16]",
+                "7 us (0.3% of model)",
+                "2 us (0.1% of model)",
+                "1441 ~ 1473 us (32)"
+            ],
+            [
+                "/ssh2/conv5X5_1/conv5X5_1.2/LeakyRelu",
+                "0",
+                "[1,40,40,16]",
+                "[1,40,40,16]",
+                "1 us (0% of model)",
+                "1 us (0% of model)",
+                "1473 ~ 1501 us (28)"
+            ],
+            [
+                "/ssh2/conv5X5_2/conv5X5_2.0/Conv",
+                "7,372,800",
+                "[1,40,40,16]",
+                "[1,40,40,16]",
+                "2 us (0.1% of model)",
+                "1 us (0% of model)",
+                "1193 ~ 1505 us (312)"
+            ],
+            [
+                "/ssh2/conv7X7_2/conv7X7_2.0/Conv",
+                "7,372,800",
+                "[1,40,40,16]",
+                "[1,40,40,16]",
+                "2 us (0.1% of model)",
+                "1 us (0% of model)",
+                "1474 ~ 1503 us (29)"
+            ],
+            [
+                "/ssh2/conv7X7_2/conv7X7_2.2/LeakyRelu",
+                "0",
+                "[1,40,40,16]",
+                "[1,40,40,16]",
+                "1 us (0% of model)",
+                "1 us (0% of model)",
+                "1476 ~ 1506 us (30)"
+            ],
+            [
+                "/ssh2/conv7x7_3/conv7x7_3.0/Conv",
+                "7,372,800",
+                "[1,40,40,16]",
+                "[1,40,40,16]",
+                "2 us (0.1% of model)",
+                "1 us (0% of model)",
+                "1090 ~ 1511 us (421)"
+            ],
+            [
+                "/ssh2/Concat",
+                "0",
+                "[1,40,40,64]",
+                "[1,40,40,64]",
+                "3 us (0.1% of model)",
+                "0",
+                "1484 ~ 1512 us (28)"
+            ],
+            [
+                "/ssh2/Relu",
+                "0",
+                "[1,40,40,64]",
+                "[1,40,40,64]",
+                "3 us (0.1% of model)",
+                "1 us (0% of model)",
+                "1430 ~ 1515 us (85)"
+            ],
+            [
+                "/ssh3/conv3X3/conv3X3.0/Conv",
+                "14,745,600",
+                "[1,20,20,32]",
+                "[1,20,24,32]",
+                "4 us (0.2% of model)",
+                "8 us (0.4% of model)",
+                "1192 ~ 1485 us (293)"
+            ],
+            [
+                "/ssh3/conv5X5_1/conv5X5_1.0/Conv",
+                "7,372,800",
+                "[1,20,20,16]",
+                "[1,20,24,16]",
+                "2 us (0.1% of model)",
+                "7 us (0.3% of model)",
+                "1428 ~ 1507 us (79)"
+            ],
+            [
+                "/ssh3/conv5X5_1/conv5X5_1.2/LeakyRelu",
+                "0",
+                "[1,20,20,16]",
+                "[1,20,24,16]",
+                "<1 us",
+                "1 us (0% of model)",
+                "1470 ~ 1508 us (38)"
+            ],
+            [
+                "/ssh3/conv5X5_2/conv5X5_2.0/Conv",
+                "1,843,200",
+                "[1,20,20,16]",
+                "[1,20,24,16]",
+                "1 us (0% of model)",
+                "1 us (0% of model)",
+                "1477 ~ 1647 us (170)"
+            ],
+            [
+                "/ssh3/conv7X7_2/conv7X7_2.0/Conv",
+                "1,843,200",
+                "[1,20,20,16]",
+                "[1,20,24,16]",
+                "1 us (0% of model)",
+                "1 us (0% of model)",
+                "1476 ~ 1637 us (161)"
+            ],
+            [
+                "/ssh3/conv7X7_2/conv7X7_2.2/LeakyRelu",
+                "0",
+                "[1,20,20,16]",
+                "[1,20,24,16]",
+                "1 us (0% of model)",
+                "2 us (0.1% of model)",
+                "1507 ~ 1638 us (131)"
+            ],
+            [
+                "/ssh3/conv7x7_3/conv7x7_3.0/Conv",
+                "1,843,200",
+                "[1,20,20,16]",
+                "[1,20,24,16]",
+                "1 us (0% of model)",
+                "1 us (0% of model)",
+                "1477 ~ 1679 us (202)"
+            ],
+            [
+                "/ssh3/Concat",
+                "0",
+                "[1,20,20,64]",
+                "[1,20,24,64]",
+                "2 us (0.1% of model)",
+                "0",
+                "1515 ~ 1679 us (164)"
+            ],
+            [
+                "/ssh3/Relu",
+                "0",
+                "[1,20,20,64]",
+                "[1,20,24,64]",
+                "1 us (0% of model)",
+                "9 us (0.4% of model)",
+                "1483 ~ 1683 us (200)"
+            ],
+            [
+                "/BboxHead.0/conv1x1/Conv",
+                "6,553,600",
+                "[1,80,80,8]",
+                "[1,80,80,16]",
+                "53 us (2.9% of model)",
+                "12 us (0.6% of model)",
+                "1508 ~ 1628 us (120)"
+            ],
+            [
+                "/BboxHead.1/conv1x1/Conv",
+                "1,638,400",
+                "[1,40,40,8]",
+                "[1,40,40,16]",
+                "15 us (0.8% of model)",
+                "11 us (0.5% of model)",
+                "1196 ~ 1680 us (484)"
+            ],
+            [
+                "/BboxHead.2/conv1x1/Conv",
+                "409,600",
+                "[1,20,20,8]",
+                "[1,20,24,32]",
+                "5 us (0.2% of model)",
+                "6 us (0.3% of model)",
+                "1479 ~ 1692 us (213)"
+            ],
+            [
+                "/ClassHead.0/conv1x1/Conv",
+                "3,276,800",
+                "[1,80,80,4]",
+                "[1,80,80,16]",
+                "53 us (2.9% of model)",
+                "6 us (0.3% of model)",
+                "1481 ~ 1635 us (154)"
+            ],
+            [
+                "/ClassHead.1/conv1x1/Conv",
+                "819,200",
+                "[1,40,40,4]",
+                "[1,40,40,16]",
+                "15 us (0.8% of model)",
+                "7 us (0.3% of model)",
+                "1479 ~ 1828 us (349)"
+            ],
+            [
+                "/ClassHead.2/conv1x1/Conv",
+                "204,800",
+                "[1,20,20,4]",
+                "[1,20,24,32]",
+                "5 us (0.2% of model)",
+                "11 us (0.6% of model)",
+                "1472 ~ 1829 us (357)"
+            ],
+            [
+                "/LandmarkHead.0/conv1x1/Conv",
+                "16,384,000",
+                "[1,80,80,20]",
+                "[1,80,80,32]",
+                "52 us (2.8% of model)",
+                "113 us (6.1% of model)",
+                "1471 ~ 1814 us (343)"
+            ],
+            [
+                "/LandmarkHead.1/conv1x1/Conv",
+                "4,096,000",
+                "[1,40,40,20]",
+                "[1,40,40,32]",
+                "14 us (0.7% of model)",
+                "31 us (1.7% of model)",
+                "1472 ~ 1823 us (351)"
+            ],
+            [
+                "/LandmarkHead.2/conv1x1/Conv",
+                "1,024,000",
+                "[1,20,20,20]",
+                "[1,20,24,32]",
+                "4 us (0.2% of model)",
+                "13 us (0.7% of model)",
+                "1693 ~ 1792 us (99)"
+            ]
+        ],
+        "loaded bytes per frame": 3079136,
+        "loaded bytes per run": 3079136,
+        "model json CRC": "304bed93",
+        "model json file": "/tmp/tmpq6nx6mef/main_graph_subgraph_0.hbir",
+        "model name": "main_graph_subgraph_0",
+        "model param CRC": "00000000",
+        "multicore sync time (ms)": 0.0,
+        "run per second": 546.87,
+        "runtime version": "3.15.55.0",
+        "stored bytes per frame": 2768640,
+        "stored bytes per run": 2768640,
+        "worst FPS": 546.87
+    }
+}

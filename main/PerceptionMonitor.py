@@ -5,7 +5,7 @@ from threading import Thread, Lock, Condition, Event
 import serial, subprocess, sys, os, time
 import cv2
 from rclpy.qos import QoSProfile, QoSReliabilityPolicy
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../face_ws/opencv')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../face_ws/face_recognition')))
 from face_sqlite import get_favorability, set_favorability
 from inference import face_recognization
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../MQTT')))
