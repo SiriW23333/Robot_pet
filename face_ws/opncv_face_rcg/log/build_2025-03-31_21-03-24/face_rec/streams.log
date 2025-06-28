@@ -1,0 +1,26 @@
+[3.935s] Invoking command in '/home/sunrise/doraemon/src/face_rec': PYTHONPATH=/home/sunrise/doraemon/build/face_rec/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sunrise/doraemon/install/face_rec/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/face_rec build --build-base /home/sunrise/doraemon/build/face_rec/build install --record /home/sunrise/doraemon/build/face_rec/install.log --single-version-externally-managed install_data
+[5.411s] running egg_info
+[5.415s] writing ../../build/face_rec/face_rec.egg-info/PKG-INFO
+[5.416s] writing dependency_links to ../../build/face_rec/face_rec.egg-info/dependency_links.txt
+[5.417s] writing entry points to ../../build/face_rec/face_rec.egg-info/entry_points.txt
+[5.417s] writing requirements to ../../build/face_rec/face_rec.egg-info/requires.txt
+[5.418s] writing top-level names to ../../build/face_rec/face_rec.egg-info/top_level.txt
+[5.431s] reading manifest file '../../build/face_rec/face_rec.egg-info/SOURCES.txt'
+[5.441s] writing manifest file '../../build/face_rec/face_rec.egg-info/SOURCES.txt'
+[5.441s] running build
+[5.442s] running build_py
+[5.443s] copying face_rec/face_training_node.py -> /home/sunrise/doraemon/build/face_rec/build/lib/face_rec
+[5.444s] running install
+[5.446s] running install_lib
+[5.450s] copying /home/sunrise/doraemon/build/face_rec/build/lib/face_rec/face_training_node.py -> /home/sunrise/doraemon/install/face_rec/lib/python3.10/site-packages/face_rec
+[5.453s] byte-compiling /home/sunrise/doraemon/install/face_rec/lib/python3.10/site-packages/face_rec/face_training_node.py to face_training_node.cpython-310.pyc
+[5.458s] running install_data
+[5.468s] running install_egg_info
+[5.477s] removing '/home/sunrise/doraemon/install/face_rec/lib/python3.10/site-packages/face_rec-0.0.0-py3.10.egg-info' (and everything under it)
+[5.478s] Copying ../../build/face_rec/face_rec.egg-info to /home/sunrise/doraemon/install/face_rec/lib/python3.10/site-packages/face_rec-0.0.0-py3.10.egg-info
+[5.482s] running install_scripts
+[5.594s] Installing face_dataset_node script to /home/sunrise/doraemon/install/face_rec/lib/FaceRec
+[5.595s] Installing face_recognition_node script to /home/sunrise/doraemon/install/face_rec/lib/FaceRec
+[5.596s] Installing face_training_node script to /home/sunrise/doraemon/install/face_rec/lib/FaceRec
+[5.598s] writing list of installed files to '/home/sunrise/doraemon/build/face_rec/install.log'
+[5.800s] Invoked command in '/home/sunrise/doraemon/src/face_rec' returned '0': PYTHONPATH=/home/sunrise/doraemon/build/face_rec/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sunrise/doraemon/install/face_rec/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/face_rec build --build-base /home/sunrise/doraemon/build/face_rec/build install --record /home/sunrise/doraemon/build/face_rec/install.log --single-version-externally-managed install_data
