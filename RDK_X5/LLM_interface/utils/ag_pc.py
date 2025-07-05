@@ -4,7 +4,6 @@ import json
 import queue
 import threading
 import time
-import Hobot.GPIO as GPIO
 import websockets
 import pyaudio
 import numpy as np
@@ -15,20 +14,15 @@ CHANNELS = 1
 RATE = 16000
 CHUNK = 1024
 
-# GPIO引脚设置
-GPIO.setmode(GPIO.BOARD) #BOARD物理引脚编码模式
-GPIO.setup(11, GPIO.IN) #设置引脚11为输入模式
-
-
 class VoiceAssistant:
-    def __init__(self):
+    def __init__(self, input_device_index=None, output_device_index=None):
         # 音频设备初始化
         self.p = pyaudio.PyAudio()
         self.input_stream = None
 
-        # 指定输入声卡索引为2，输出声卡索引为3
-        self.input_device_index = 2
-        self.output_device_index = 3
+        # 自动选择或手动指定输入/输出设备
+        self.input_device_index = input_device_index if input_device_index is not None else self.get_default_input_device()
+        self.output_device_index = output_device_index if output_device_index is not None else self.get_default_output_device()
 
         self.output_stream = self.p.open(
             format=FORMAT,
@@ -60,30 +54,39 @@ class VoiceAssistant:
             self.event_loop
         )
 
+    def get_default_input_device(self):
+        # 自动选择第一个可用输入设备
+        for i in range(self.p.get_device_count()):
+            dev = self.p.get_device_info_by_index(i)
+            if dev.get('maxInputChannels', 0) > 0:
+                return i
+        return None
+
+    def get_default_output_device(self):
+        # 自动选择第一个可用输出设备
+        for i in range(self.p.get_device_count()):
+            dev = self.p.get_device_info_by_index(i)
+            if dev.get('maxOutputChannels', 0) > 0:
+                return i
+        return None
+
     def amplify_audio(self, audio_data, amplification_factor=10):
         """音频音量放大函数"""
         try:
-            # 将字节数据转换为numpy数组
             audio_array = np.frombuffer(audio_data, dtype=np.int16)
-            
-            # 放大音量
             amplified_array = audio_array.astype(np.float32) * amplification_factor
-            
-            # 防止溢出，限制在int16范围内
             amplified_array = np.clip(amplified_array, -32768, 32767)
-            
-            # 转换回int16并返回字节数据
             return amplified_array.astype(np.int16).tobytes()
         except Exception as e:
             print(f"音频放大错误: {str(e)}")
-            return audio_data  # 如果出错，返回原始数据
+            return audio_data
 
     async def _start_voice_assistant(self):
         """初始化WebSocket连接并发送会话配置"""
         try:
             self.ws = await websockets.connect(
                 "wss://ai-gateway.vei.volces.com/v1/realtime?model=AG-voice-chat-agent",
-                extra_headers={"Authorization"#:TODO write your token here
+                extra_headers={"Authorization" #TODO write your token here
                                }
             )
             await self.ws.send(json.dumps({
@@ -104,9 +107,7 @@ class VoiceAssistant:
                 async for message in self.ws:
                     event = json.loads(message)
                     if event.get("type") == "response.audio.delta":
-                        # 解码音频数据
                         audio_data = base64.b64decode(event["delta"])
-                        # 放大音量10倍后播放
                         amplified_audio = self.amplify_audio(audio_data, 10)
                         self.output_stream.write(amplified_audio)
                     elif event.get("type") == "response.done":
@@ -114,18 +115,16 @@ class VoiceAssistant:
                         self.response_done = True
                         self.chat_history.append(json.dumps(event, ensure_ascii=False))
                     elif event.get("type") == "conversation.item.input_audio_transcription.completed":
-                        # 显示用户说话内容
                         transcript = event.get("transcript", "")
                         if transcript:
                             print(f"用户: {transcript}")
                         self.chat_history.append(json.dumps(event, ensure_ascii=False))
                     elif event.get("type") == "response.audio_transcript.delta":
-                        # 显示AI回应文本
                         delta = event.get("delta", "")
                         if delta:
                             print(delta, end="", flush=True)
                     elif event.get("type") == "response.audio_transcript.done":
-                        print()  # 换行
+                        print()
                         self.chat_history.append(json.dumps(event, ensure_ascii=False))
                     elif event.get("type") == "response.output_item.done":
                         self.chat_history.append(json.dumps(event, ensure_ascii=False))
@@ -153,7 +152,7 @@ class VoiceAssistant:
         """开始录音"""
         if not self.is_recording:
             self.is_recording = True
-            self.audio_buffer = queue.Queue()  # 每次新建队列，避免残留
+            self.audio_buffer = queue.Queue()
             self.input_stream = self.p.open(
                 format=FORMAT,
                 channels=CHANNELS,
@@ -163,12 +162,11 @@ class VoiceAssistant:
                 input_device_index=self.input_device_index,
                 stream_callback=self.audio_callback
             )
-            # 提交asr任务
             asyncio.run_coroutine_threadsafe(
                 self.send_audio(),
                 self.event_loop
             )
-            print("录音中...")
+            print("录音中...（按回车键停止）")
 
     def stop_recording(self):
         """停止录音并发送"""
@@ -176,7 +174,7 @@ class VoiceAssistant:
             self.is_recording = False
             self.input_stream.stop_stream()
             self.input_stream.close()
-            self.audio_buffer.put(None)  # 及时通知 send_audio 结束
+            self.audio_buffer.put(None)
             print("处理中...")
 
     async def send_audio(self):
@@ -188,10 +186,9 @@ class VoiceAssistant:
             if not self.response_done:
                 await self.ws.send(json.dumps({"type": "response.cancel"}))
 
-            # 发送录音数据
             while True:
                 try:
-                    data = self.audio_buffer.get(timeout=1)  # 避免永久阻塞
+                    data = self.audio_buffer.get(timeout=1)
                 except queue.Empty:
                     if not self.is_recording:
                         break
@@ -221,18 +218,16 @@ class VoiceAssistant:
         self.p.terminate()
         self.event_loop.stop()
 
-
-
 if __name__ == "__main__":
     assistant = VoiceAssistant()
-
+    print("PC语音助手已启动。")
+    print("按回车键开始录音，再次按回车键停止录音。按Ctrl+C退出。")
     try:
         while True:
-            if GPIO.input(11) == 1 and not assistant.is_recording:
-                assistant.start_recording()
-            elif GPIO.input(11) == 0 and assistant.is_recording:
-                assistant.stop_recording()
+            input("按回车键开始录音...")
+            assistant.start_recording()
+            input("录音中...按回车键停止。")
+            assistant.stop_recording()
     except KeyboardInterrupt:
         print("程序终止")
         assistant.shutdown()
-
